@@ -7,6 +7,7 @@ import {name} from './data/aboutMe';
 import FunFact from './components/Funfact'
 import { WorkExp, CompAndRole } from './components/workExp';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
       <Education />
       <Skills />
       <WorkExp />
+      <Projects />
     </main>
   )
 }
