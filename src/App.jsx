@@ -8,6 +8,10 @@ import FunFact from './components/Funfact'
 import { WorkExp, CompAndRole } from './components/workExp';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Typewriter from 'typewriter-effect';
+import FadeContent from './FadeContent'
+import ScrollFadeIn from './components/ScrollFadeIn';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,17 +19,28 @@ function App() {
   
   return (
     <main>
-      <h1>
-        {name}
+      <ScrollFadeIn>
+        
+      
+      <h1 className="text-7xl font-bold">
+      <Typewriter
+  options={{
+    strings: [name],
+    autoStart: true,
+    cursor: '_',
+    pauseFor: 1450000000
+  }}
+/>
+        
       </h1>
-      <p>{whatIdo}</p>
       <CompAndRole />
+      <p>{whatIdo}</p>
       <AboutMe />
       <FunFact />
       <Education />
       <Skills />
       <WorkExp />
-      <Projects />
+      <Projects /></ScrollFadeIn>
     </main>
   )
 }
