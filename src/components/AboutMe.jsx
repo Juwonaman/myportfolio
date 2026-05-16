@@ -4,7 +4,7 @@ import aboutMe from '../data/aboutMe';
 function AboutMe() {
   return (
     <section>
-      <h2>About Me</h2>
+      <h2 className="recipe-section-title">About</h2>
       {aboutMe.map((paragraph, idx) => (
         <p key={idx}>{paragraph}</p>
       ))}

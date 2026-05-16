@@ -18,6 +18,18 @@
   
 }
 
+@layer components {
+  .recipe-section-title{
+    @apply text-5xl font-semibold tracking-tight text-stone-900;
+  }
+  .recipe-section-small{
+    @apply text-2xl font-semibold text-stone-900;
+  }
+  .reciple-section-xsmall{
+    @apply text-xl font-semibold text-stone-900;
+  }
+}
+
 @theme{
   --animation-fadein: 1s ease-out forwards;
   @keyframes fadein{

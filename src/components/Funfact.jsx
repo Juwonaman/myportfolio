@@ -5,13 +5,13 @@ function FunFact(){
     return (
         <section>
             <div>
-                <h2>Outside Of Coding</h2>
+                <h2 className= "recipe-section-small">Outside Of Coding</h2>
                 <h3> You can find me doing these things</h3>
                 {hobbyInfo.map((hob, idx) => (<div key = {idx}> 
                     <h4>{hob.title}</h4>
                     <p> {hob.description}</p></div>
                     ))}
-                <h3>Fun Facts</h3>
+                <h3 className='reciple-section-xsmall'>Fun Facts</h3>
                 {funFacts.map((fact, idx) => (<p key = {idx}>{fact}</p>))}
 
             </div>

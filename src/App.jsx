@@ -9,7 +9,6 @@ import { WorkExp, CompAndRole } from './components/workExp';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Typewriter from 'typewriter-effect';
-import FadeContent from './FadeContent'
 import ScrollFadeIn from './components/ScrollFadeIn';
 
 
@@ -22,7 +21,7 @@ function App() {
       <ScrollFadeIn>
         
       
-      <h1 className="text-7xl font-bold">
+      <h1 className="text-8xl font-bold">
       <Typewriter
   options={{
     strings: [name],

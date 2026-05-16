@@ -1,23 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import workEx from '../data/workExp';
 
 export function CompAndRole() {
     const [index, setIndex] = useState(0);
+    const [blurred, setBlurred] = useState(false);
+    const skipBlurOnMount = useRef(true);
 
     useEffect(() => { 
         if (workEx.length === 0) return;
 
         const id = setInterval(() => {
             setIndex((i) => (i +1) % workEx.length);
-        }, 2000);
+        }, 1500);
         return () => clearInterval(id);
     }, [workEx.length]);
+
+    useEffect(() => {
+        if (skipBlurOnMount.current) {
+            skipBlurOnMount.current = false;
+            return;
+        }
+        setBlurred(true);
+        const id = window.setTimeout(() => setBlurred(false), 260);
+        return () => window.clearTimeout(id);
+    }, [index]);
 
     if (workEx.length === 0) return null;
     const current = workEx[index];
 
   return (
-    <div>
+    <div
+      className={`transition-[filter] duration-200 ease-out ${blurred ? 'blur-xs' : ''}`}
+    >
       {"Previous "}{current.role} @ {current.company} 
     </div>
   );
@@ -27,7 +41,7 @@ export function CompAndRole() {
 export function WorkExp() {
     return(
         <section>
-            <h2>Work Experience</h2>
+            <h2 className = "recipe-section-title">Work Experience</h2>
             
             {workEx.map((comp, idx) => <div key = {idx}>
                  <h3>{comp.company}</h3>
