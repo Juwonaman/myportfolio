@@ -20,7 +20,7 @@ function App() {
     <main>
       <ScrollFadeIn>
         
-      
+    <header className = "recipe-middle-format ">
       <h1 className="text-8xl font-bold">
       <Typewriter
   options={{
@@ -28,12 +28,16 @@ function App() {
     autoStart: true,
     cursor: '_',
     pauseFor: 1450000000
-  }}
-/>
-        
+  }}/>
+  
       </h1>
-      <CompAndRole />
+      <section className = "border-2 border-black shadow-[6px_6px_0px_#777] bg-[#f7f4ed] px-4">
+        <span className =" absolute -top-1 left-2 bg-[#f7f4ed] px-4">cat ~/introduction.md</span>
+      <CompAndRole/>
       <p>{whatIdo}</p>
+      </section>
+      </header>
+
       <AboutMe />
       <FunFact />
       <Education />

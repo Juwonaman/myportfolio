@@ -14,7 +14,7 @@ export const hobbyInfo = [
   ];
   
  export const funFacts = [
-    "I can leg press 800 lbs",
+    "I can leg press 840 lbs",
     "My favorite animal is the African elephant",
-    "I used to make YouTube videos and have a channel with 4K+ subscribers",
+    "I love music!",
   ];  

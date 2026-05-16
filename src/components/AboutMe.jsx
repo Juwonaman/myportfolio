@@ -6,7 +6,24 @@ function AboutMe() {
     <section>
       <h2 className="recipe-section-title">About</h2>
       {aboutMe.map((paragraph, idx) => (
-        <p key={idx}>{paragraph}</p>
+        <p key={idx}>
+          {typeof paragraph === 'string'
+            ? paragraph
+            : paragraph.map((chunk, chunkIdx) =>
+                chunk.href ? (
+                  <a
+                    key={chunkIdx}
+                    href={chunk.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {chunk.text}
+                  </a>
+                ) : (
+                  <span key={chunkIdx}>{chunk.text}</span>
+                )
+              )}
+        </p>
       ))}
     </section>
   );

@@ -30,7 +30,7 @@ export function CompAndRole() {
 
   return (
     <div
-      className={`transition-[filter] duration-200 ease-out ${blurred ? 'blur-xs' : ''}`}
+      className={` transition-[filter] duration-200 ease-out ${blurred ? 'blur-xs' : ''}`}
     >
       {"Previous "}{current.role} @ {current.company} 
     </div>

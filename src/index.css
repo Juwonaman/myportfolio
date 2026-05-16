@@ -17,34 +17,15 @@
 @media (prefers-color-scheme: white) {
   
 }
-
-@layer components {
-  .recipe-section-title{
-    @apply text-5xl font-semibold tracking-tight text-stone-900;
-  }
-  .recipe-section-small{
-    @apply text-2xl font-semibold text-stone-900;
-  }
-  .reciple-section-xsmall{
-    @apply text-xl font-semibold text-stone-900;
-  }
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-@theme{
-  --animation-fadein: 1s ease-out forwards;
-  @keyframes fadein{
-    0%{
-      opacity: 0;
-    }
-    100%{
-      opacity: 100;
-    }
-  }
-}
 
-body {
-  margin: 0;
-}
+
 
 
 
