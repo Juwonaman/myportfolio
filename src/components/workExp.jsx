@@ -11,7 +11,7 @@ export function CompAndRole() {
 
         const id = setInterval(() => {
             setIndex((i) => (i +1) % workEx.length);
-        }, 1500);
+        }, 3500);
         return () => clearInterval(id);
     }, [workEx.length]);
 
@@ -40,12 +40,9 @@ export function CompAndRole() {
 
 export function WorkExp() {
     return(
-        <section>
-            <h2 className = "recipe-section-title">Work Experience</h2>
-            
+        <section>            
             {workEx.map((comp, idx) => <div key = {idx}>
-                 <h3>{comp.company}</h3>
-                 {/* <p>{comp.role} @ {comp.company} </p> */}
+                 <h2 className = "reciple-section-xsmall min-w-0 flex-1">{comp.company}</h2>
                  <p>{comp.role}</p>
                     <p>{comp.date}</p>
                     <p>{comp.location}</p>

@@ -6,9 +6,9 @@ const schoolinfo = [
       date: "August 2022 - May 2025"
     },
     {school: "Georgia Institute of Technology", location: "Atlanta Georgia",
-      gpa: "4.0/4.0",
+      gpa: "3.0/4.0",
       degree: "Master of Science in Computer Science", 
-      certs: "President & Dean's List Candidate",
+      certs: "",
       date: "January 2026 - May 2028"
     }
     ];

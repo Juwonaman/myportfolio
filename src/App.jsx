@@ -57,7 +57,7 @@ function App() {
         </button>
         <button
           type="button"
-          className="my-buttonpt w-fit border-2 border-black px-2.5 py-1 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+          className=" my-buttonpt w-fit border-2 border-black px-3 py-1.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
         >
           G
         </button>
@@ -88,7 +88,7 @@ function App() {
       </section>
 
 
-      <section className="relative border-2 border-black bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <section className="relative border-2 border-black bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section ">
         <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">
           whoami
         </span>

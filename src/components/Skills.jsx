@@ -3,10 +3,12 @@ import skills from '../data/skills';
 
 function Skills(){
     return(
-        <section>
-            <h2 className="recipe-section-title">Skills</h2>
+        <section className='flex flex-wrap gap-2 '>
             {skills.map((skill, idx) => <div key = {idx}>
+                <div className="relative border-2 border-black  bg-[#f7f4ed] px-1 pt-1 w-fit shadow-[3px_3px_0px_grey]">
                 {skill}
+                </div>
+                
             </div>)}
         </section>
     );

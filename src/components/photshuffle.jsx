@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import dsc0097 from '../data/DSC_0097.JPEG';
 import img1015 from '../data/IMG_1015.jpg';
 import img2080 from '../data/IMG_2080.JPG';
@@ -8,6 +8,7 @@ import img4240 from '../data/IMG_4240.jpg';
 import img4494 from '../data/IMG_4494.jpg';
 import img7604 from '../data/IMG_7604.jpg';
 
+/** Shown in the carousel and dots — IMG_7604 is easter-egg back only, not listed here. */
 export const photos = [
   { id: 'dsc0097', src: dsc0097, alt: 'Photo DSC_0097' },
   { id: 'img1015', src: img1015, alt: 'Photo IMG_1015' },
@@ -15,26 +16,31 @@ export const photos = [
   { id: 'img2106', src: img2106, alt: 'Photo IMG_2106' },
   { id: 'img4240', src: img4240, alt: 'Photo IMG_4240' },
   { id: 'img4494', src: img4494, alt: 'Photo IMG_4494' },
-  { id: 'img7604', src: img7604, alt: 'Photo IMG_7604' },
 ];
 
 const IMG_2106_ID = 'img2106';
+const easterEggBack = { id: 'img7604', src: img7604, alt: 'Photo IMG_7604' };
+const SHUFFLE_MS = 3500;
 
 export default function PhotoShuffle() {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const current = photos[index];
   const img2106Photo = photos.find((p) => p.id === IMG_2106_ID);
-  const img7604Photo = photos.find((p) => p.id === 'img7604');
   const is2106Pair = current.id === IMG_2106_ID;
 
+  useEffect(() => {
+    if (photos.length === 0) return undefined;
+
+    const id = window.setInterval(() => {
+      setFlipped(false);
+      setIndex((i) => (i + 1) % photos.length);
+    }, SHUFFLE_MS);
+
+    return () => window.clearInterval(id);
+  }, []);
+
   const handleDotClick = (i) => {
-    const photo = photos[i];
-    if (photo.id === IMG_2106_ID) {
-      setIndex(i);
-      setFlipped(true);
-      return;
-    }
     setIndex(i);
     setFlipped(false);
   };
@@ -46,9 +52,9 @@ export default function PhotoShuffle() {
   };
 
   return (
-    <div className="photo-shuffle">
+    <div className="photo-shuffle ">
       <div
-        className={`whoami-photo ${is2106Pair ? 'whoami-photo-flip cursor-pointer' : ''}`}
+        className={`whoami-photo shadow-[3px_3px_0px_grey] ${is2106Pair ? 'whoami-photo-flip cursor-pointer' : ''}`}
         onClick={is2106Pair ? handlePhotoClick : undefined}
         onKeyDown={
           is2106Pair
@@ -73,10 +79,10 @@ export default function PhotoShuffle() {
                 className="block h-full w-full object-cover"
               />
             </div>
-            <div className="whoami-photo-face whoami-photo-face-back">
+            <div className="whoami-photo-face whoami-photo-face-back ">
               <img
-                src={img7604Photo.src}
-                alt={img7604Photo.alt}
+                src={easterEggBack.src}
+                alt={easterEggBack.alt}
                 className="block h-full w-full object-cover"
               />
             </div>
@@ -85,7 +91,7 @@ export default function PhotoShuffle() {
           <img
             src={current.src}
             alt={current.alt}
-            className="block h-full w-full object-cover"
+            className="block h-full w-full object-cover "
           />
         )}
       </div>
@@ -98,7 +104,7 @@ export default function PhotoShuffle() {
             onClick={() => handleDotClick(i)}
             aria-label={
               photo.id === IMG_2106_ID
-                ? 'Show IMG_2106, flip to IMG_7604'
+                ? 'Show IMG_2106 (click photo to flip)'
                 : `Show ${photo.alt}`
             }
             aria-selected={i === index}
@@ -106,7 +112,13 @@ export default function PhotoShuffle() {
           />
         ))}
       </div>
-      {is2106Pair && flipped && <p className="photo-shuffle-found">you found my easter egg</p>}
+      <div className="photo-shuffle-found-slot" aria-live="polite">
+        <p
+          className={`photo-shuffle-found ${is2106Pair && flipped ? 'photo-shuffle-found-visible' : ''}`}
+        >
+          you found my easter egg!
+        </p>
+      </div>
     </div>
   );
 }
