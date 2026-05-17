@@ -35,10 +35,10 @@
         background-color: var(--opbg);
     }
     .hero-name-row {
-        @apply flex w-full flex-wrap items-center justify-between gap-4;
+        @apply flex w-full flex-col flex-wrap items-start gap-4 md:flex-row md:items-center md:justify-between;
     }
     .to-right {
-        @apply flex shrink-0 flex-wrap items-end justify-end gap-2;
+        @apply flex w-full max-w-full flex-wrap items-center justify-start gap-2 md:w-auto md:justify-end;
     }
     .inside-section{
         @apply pb-3;
@@ -46,6 +46,45 @@
     
     .visitor-content {
         @apply flex w-full max-w-full flex-row flex-wrap items-start justify-start gap-4;
+    }
+    .whoami-row {
+        @apply flex w-full flex-row flex-wrap items-start gap-6;
+    }
+    .photo-shuffle {
+        @apply ml-auto mb-10 mt-5 flex max-w-full shrink-0 flex-col items-center gap-2 max-md:mr-4;
+    }
+    .whoami-photo {
+        @apply h-72 w-56 overflow-hidden border-2 border-black bg-[#f7f4ed] p-0;
+    }
+    .photo-shuffle-dots {
+        @apply flex w-56 flex-wrap justify-center gap-1.5;
+    }
+    .photo-shuffle-dot {
+        @apply h-2.5 w-2.5 shrink-0 border border-black bg-black p-0 transition-all;
+    }
+    .photo-shuffle-dot-active {
+        @apply scale-125 ring-2 ring-black ring-offset-1;
+    }
+    .photo-shuffle-found {
+        @apply mt-1 w-56 text-center text-sm font-medium italic text-stone-800;
+    }
+    .whoami-photo-flip {
+        perspective: 1000px;
+    }
+    .whoami-photo-inner {
+        @apply relative h-full w-full;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease-in-out;
+    }
+    .whoami-photo-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+    .whoami-photo-face {
+        @apply absolute inset-0 h-full w-full overflow-hidden;
+        backface-visibility: hidden;
+    }
+    .whoami-photo-face-back {
+        transform: rotateY(180deg);
     }
   }
 

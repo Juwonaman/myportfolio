@@ -4,13 +4,13 @@ import AboutMe from './components/AboutMe';
 import Education from './components/Education';
 import { whatIdo } from './data/aboutMe';
 import {name} from './data/aboutMe';
-import FunFact from './components/Funfact'
 import { WorkExp, CompAndRole } from './components/workExp';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Typewriter from 'typewriter-effect';
 import ScrollFadeIn from './components/ScrollFadeIn';
 import { openGitHub, openInstagram, openLinkedIn, openResume } from './components/buttonTask';
+import PhotoShuffle from './components/photshuffle';
 
 
 function App() {
@@ -88,14 +88,16 @@ function App() {
       </section>
 
 
-      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">whoami</span>
-      <div className="max-w-2xl min-w-0">
-
-      
-      <AboutMe />
-      <FunFact />
-      </div>
+      <section className="relative border-2 border-black bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+        <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">
+          whoami
+        </span>
+        <div className="whoami-row">
+          <div className="max-w-2xl min-w-0 flex-1">
+            <AboutMe />
+          </div>
+          <PhotoShuffle />
+        </div>
       </section>
 
       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
