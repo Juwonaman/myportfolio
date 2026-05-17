@@ -1,16 +1,22 @@
 // aboutMe.js
-const name = "Hi, I'm Olajuwon"
+const name = "Olajuwon (Juwon) Atunnise"
 const aboutMe = [
-  "My interest in technology started in the Metro Atlanta area, where curiosity and creativity led me to explore how digital tools and systems work. Over time, that interest grew into a passion for building practical software solutions that solve real-world problems.",
+  "Most of my time goes into software development, building projects, experimenting with AI tools, and turning random ideas into something I can actually use.",
   [
-    { text: "At " },
-    {text: "Kennesaw State University ", href: "https://www.kennesaw.edu/"},
-    {text: "I studied Computer Science while independently learning software development, building projects, and gaining hands-on experience. By mid-2025, I graduated with my B.S. in Computer Science, interned at" },
-    {text: " Union Pacific ", href: "https://www.up.com/"},
-    {text: "one of the largest railroad companies in the U.S, served as a Teaching Assistant and Research Assistant, and presented my research at the KSU Symposium."}
+    { text: "I studied Computer Science at " },
+    { text: "Kennesaw State University", href: "https://www.kennesaw.edu/" },
+    {
+      text: ", where I built projects, learned a lot outside the classroom, interned at "
+    },
+    { text: "Union Pacific", href: "https://www.up.com/" },
+    {
+      text: ", served as a Teaching Assistant and Research Assistant, and presented my research at the KSU Symposium before graduating in mid-2025."
+    }
   ],
+  "When I’m not working on something, I’m probably playing video games, trying a new idea, going on a late-night walk, or convincing myself a project “should only take a weekend.”",
+  "Feel free to reach out to me on LinkedIn!"
 ];
-  const whatIdo= 'Full Stack Developer. Passionate about using code to solve complex problems and build meaningful solutions, and a coffie addict.'
+  const whatIdo= 'Full Stack Developer. Passionate about using code to solve complex problems and build meaningful solutions, and a coffee addict.'
 
 export default aboutMe;
 export { whatIdo };

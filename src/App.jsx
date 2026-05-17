@@ -10,40 +10,120 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Typewriter from 'typewriter-effect';
 import ScrollFadeIn from './components/ScrollFadeIn';
+import { openGitHub, openInstagram, openLinkedIn, openResume } from './components/buttonTask';
 
 
 function App() {
   const [count, setCount] = useState(0)
-  const general = ['About Me','Outside of Coding','Fun Facts', 'My Skills', 'My Projects', 'Work Experience', 'Education', 'Contact Me', ]
   
   return (
     <main>
       <ScrollFadeIn>
         
-    <header className = "recipe-middle-format ">
-      <h1 className="text-8xl font-bold">
+      <header className= "recipe-between-title">
+        
+    <div className="hero-name-row">
+      
+      <h1 className="min-w-0 shrink text-3xl font-bold">
+        
       <Typewriter
   options={{
     strings: [name],
     autoStart: true,
     cursor: '_',
     pauseFor: 1450000000
-  }}/>
+  }}/>      </h1>
   
-      </h1>
-      <section className = "border-2 border-black shadow-[6px_6px_0px_#777] bg-[#f7f4ed] px-4">
-        <span className =" absolute -top-1 left-2 bg-[#f7f4ed] px-4">cat ~/introduction.md</span>
-      <CompAndRole/>
-      <p>{whatIdo}</p>
-      </section>
-      </header>
+      <div className="to-right">
+        <button
+          type="button"
+          onClick={openLinkedIn}
+          className="my-button w-fit border-2 border-black px-7 py-0.5 font-medium text-white shadow-[3px_3px_0px_grey] transition-all"
+        >
+          LinkedIn
+        </button>
+        <button
+          type="button"
+          onClick={openGitHub}
+          className="my-buttonpt w-fit border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+        >
+          GitHub
+        </button>
+        <button 
+        type="button"
+        onClick={openInstagram}
+        className="px-7 py-0.5 border-2 border-black font-medium text-black w-fit transition-all shadow-[3px_3px_0px_grey] my-buttonpt ">
+          Instagram
+        </button>
+        <button
+          type="button"
+          className="my-buttonpt w-fit border-2 border-black px-2.5 py-1 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+        >
+          G
+        </button>
+      </div>
+    </div>
+      <CompAndRole/></header>
 
+
+
+
+
+      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+        <span className="absolute left-26 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/forvisitors.md</span>
+        
+        
+        <div className="visitor-content">
+          <span className="max-w-2xl min-w-0">
+            Hi I am Juwon, a CS graduate from KSU, a {whatIdo}
+          </span>
+          <button
+            type="button"
+            onClick={openResume}
+            className="my-buttonpt ml-auto w-fit shrink-0 border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+          >
+            Resume
+          </button>
+        </div>
+      </section>
+
+
+      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">whoami</span>
+      <div className="max-w-2xl min-w-0">
+
+      
       <AboutMe />
       <FunFact />
+      </div>
+      </section>
+
+      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/education.md</span>
+
+     
       <Education />
+      </section>
+
+      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/skills.md</span>
+
+     
       <Skills />
+       </section>
+
+       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/workExperience.md</span>
+
       <WorkExp />
-      <Projects /></ScrollFadeIn>
+       </section>
+
+       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/projects.md</span>
+
+      <Projects />       </section>
+
+      </ScrollFadeIn>
     </main>
   )
 }

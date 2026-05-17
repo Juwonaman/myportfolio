@@ -5,8 +5,7 @@ function FunFact(){
     return (
         <section>
             <div>
-                <h2 className= "recipe-section-small">Outside Of Coding</h2>
-                <h3> You can find me doing these things</h3>
+                <h3> You can find me doing these things outside of coding</h3>
                 {hobbyInfo.map((hob, idx) => (<div key = {idx}> 
                     <h4>{hob.title}</h4>
                     <p> {hob.description}</p></div>
