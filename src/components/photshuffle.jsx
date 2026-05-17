@@ -25,9 +25,14 @@ const SHUFFLE_MS = 3500;
 export default function PhotoShuffle() {
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [timerReset, setTimerReset] = useState(0);
   const current = photos[index];
   const img2106Photo = photos.find((p) => p.id === IMG_2106_ID);
   const is2106Pair = current.id === IMG_2106_ID;
+
+  const resetShuffleTimer = () => {
+    setTimerReset((n) => n + 1);
+  };
 
   useEffect(() => {
     if (photos.length === 0) return undefined;
@@ -38,16 +43,18 @@ export default function PhotoShuffle() {
     }, SHUFFLE_MS);
 
     return () => window.clearInterval(id);
-  }, []);
+  }, [timerReset]);
 
   const handleDotClick = (i) => {
     setIndex(i);
     setFlipped(false);
+    resetShuffleTimer();
   };
 
   const handlePhotoClick = () => {
     if (is2106Pair) {
       setFlipped((f) => !f);
+      resetShuffleTimer();
     }
   };
 

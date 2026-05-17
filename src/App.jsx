@@ -38,26 +38,26 @@ function App() {
         <button
           type="button"
           onClick={openLinkedIn}
-          className="my-button w-fit border-2 border-black px-7 py-0.5 font-medium text-white shadow-[3px_3px_0px_grey] transition-all"
+          className="cursor-pointer my-button w-fit border-2 border-black px-7 py-0.5 font-medium text-white shadow-[3px_3px_0px_grey] transition-all"
         >
           LinkedIn
         </button>
         <button
           type="button"
           onClick={openGitHub}
-          className="my-buttonpt w-fit border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+          className="cursor-pointer my-buttonpt w-fit border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
         >
           GitHub
         </button>
         <button 
         type="button"
         onClick={openInstagram}
-        className="px-7 py-0.5 border-2 border-black font-medium text-black w-fit transition-all shadow-[3px_3px_0px_grey] my-buttonpt ">
+        className=" cursor-pointer px-7 py-0.5 border-2 border-black font-medium text-black w-fit transition-all shadow-[3px_3px_0px_grey] my-buttonpt ">
           Instagram
         </button>
         <button
           type="button"
-          className=" my-buttonpt w-fit border-2 border-black px-3 py-1.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+          className=" cursor-pointer my-buttonpt w-fit border-2 border-black px-3 py-1.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
         >
           G
         </button>
@@ -80,7 +80,7 @@ function App() {
           <button
             type="button"
             onClick={openResume}
-            className="my-buttonpt ml-auto w-fit shrink-0 border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+            className="cursor-pointer my-buttonpt ml-auto w-fit shrink-0 border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
           >
             Resume
           </button>

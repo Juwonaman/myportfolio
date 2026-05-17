@@ -46,6 +46,37 @@
     .education-date {
         @apply text-base font-medium text-stone-900;
     }
+    .experience-row {
+        @apply flex w-full flex-wrap items-baseline justify-between gap-x-4 gap-y-1;
+    }
+    .experience-date {
+        @apply text-base font-medium text-stone-900;
+    }
+    .experience-duties-panel {
+        @apply relative grid w-full;
+    }
+    .experience-duties-panel > ul {
+        @apply col-start-1 row-start-1 list-disc space-y-1 pl-5 text-sm;
+    }
+    .experience-duties-sizer {
+        @apply invisible;
+    }
+    .experience-duties-list {
+        @apply absolute top-0 left-0 w-full;
+    }
+    .experience-arrow-blink {
+        animation: experience-arrow-blink 0.9s step-end infinite;
+    }
+    @keyframes experience-arrow-blink {
+        0%,
+        49% {
+            opacity: 1;
+        }
+        50%,
+        100% {
+            opacity: 0;
+        }
+    }
     .inside-section{
         @apply pb-3;
     }
