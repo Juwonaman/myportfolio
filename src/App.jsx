@@ -14,6 +14,7 @@ import SocialButton from './components/SocialButton';
 import socialButtons from './data/socialButtons';
 import PhotoShuffle from './components/photshuffle';
 import Contact from './components/Contact';
+import ThemeToggle from './components/ThemeToggle';
 import { ArrowNavProvider } from './context/ArrowNavContext';
 
 const NAV_SOCIAL_ACTIONS = {
@@ -57,12 +58,7 @@ function App() {
             onClick={NAV_SOCIAL_ACTIONS[id]}
           />
         ))}
-        <button
-          type="button"
-          className=" cursor-pointer my-buttonpt w-fit border-2 border-black px-3 py-1.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
-        >
-          G
-        </button>
+        <ThemeToggle />
       </div>
     </div>
       <CompAndRole/></header>
@@ -71,8 +67,8 @@ function App() {
 
 
 
-      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
-        <span className="absolute left-26 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/forvisitors.md</span>
+      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
+        <span className="absolute left-26 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">cat ~/forvisitors.md</span>
         
         
         <div className="visitor-content">
@@ -82,7 +78,7 @@ function App() {
           <button
             type="button"
             onClick={openResume}
-            className="cursor-pointer my-buttonpt ml-auto w-fit shrink-0 border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+            className="cursor-pointer my-buttonpt ml-auto w-fit shrink-0 border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
           >
             Resume
           </button>
@@ -90,8 +86,8 @@ function App() {
       </section>
 
 
-      <section className="relative border-2 border-black bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section ">
-        <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">
+      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section ">
+        <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">
           whoami
         </span>
         <div className="whoami-row">
@@ -108,20 +104,20 @@ function App() {
         </blockquote>
       </section>
 
-      <section className="relative border-2 border-black px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/workExperience.md</span>
+      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">cat ~/workExperience.md</span>
 
       <WorkExp />
        </section>
-      <section className="relative border-2 border-black bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/education.md</span>
+      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">cat ~/education.md</span>
 
      
       <Education />
       </section>
 
-      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/skills.md</span>
+      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">ls ~/skills.md</span>
 
      
       <Skills />
@@ -129,14 +125,14 @@ function App() {
 
        
 
-       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/projects.md</span>
+       <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">ls ~/projects.md</span>
 
       <Projects />  
        </section>
 
-       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/contact.md</span>
+       <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">ls ~/contact.md</span>
 
       <Contact />  
        </section>

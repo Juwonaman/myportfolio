@@ -64,7 +64,7 @@ function ProjectCard({
               key={btnIdx}
               type="button"
               onClick={(e) => onButtonClick(e, button)}
-              className="my-buttonpt w-fit shrink-0 cursor-pointer border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+              className="my-buttonpt w-fit shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
             >
               {button.label}
             </button>

@@ -9,18 +9,20 @@ function SocialButton({
   className = '',
 }) {
   const isHeader = appearance === 'header';
-  const isPrimary = variant === 'primary' && !isHeader;
+  const isPrimary = variant === 'primary';
 
   let baseClass;
-  if (isHeader) {
-    baseClass = 'nav-social-btn-header text-stone-900';
+  if (isHeader && isPrimary) {
+    baseClass = 'nav-social-btn-header nav-social-btn-header-primary';
+  } else if (isHeader) {
+    baseClass = 'nav-social-btn-header';
   } else if (isPrimary) {
-    baseClass = 'my-button text-white';
+    baseClass = 'my-button';
   } else {
-    baseClass = 'my-buttonpt text-black';
+    baseClass = 'my-buttonpt';
   }
 
-  const combinedClass = `nav-social-btn cursor-pointer border-2 border-black shadow-[3px_3px_0px_grey] transition-all ${baseClass} ${className}`.trim();
+  const combinedClass = `nav-social-btn cursor-pointer border-2 border-[var(--border-strong)] shadow-[3px_3px_0px_grey] transition-all ${baseClass} ${className}`.trim();
   const iconClass = isHeader ? 'nav-social-icon nav-social-icon-header' : 'nav-social-icon';
 
   const content = (

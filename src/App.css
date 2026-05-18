@@ -27,15 +27,19 @@
     }
     .my-button{
         background-color: var(--blue);
+        color: #ffffff;
     }
     .my-button:hover {
         background-color: var(--opbg);
+        color: var(--opbg-text);
     }
     .my-buttonpt{
         background-color: var(--bg);
+        color: var(--text-h);
     }
     .my-buttonpt:hover{
         background-color: var(--opbg);
+        color: var(--opbg-text);
     }
     .hero-name-row {
         @apply flex w-full flex-col flex-wrap items-start gap-4 md:flex-row md:items-center md:justify-between;
@@ -95,7 +99,7 @@
         @apply justify-start;
     }
     .experience-skill-chip {
-        @apply inline-block cursor-pointer border-2 border-black bg-[var(--justWhite)] px-2 py-0.5 shadow-[3px_3px_0px_grey] hover:animate-pulse;
+        @apply inline-block cursor-pointer border-2 border-[var(--border-strong)] bg-[var(--justWhite)] text-[var(--text-h)] px-2 py-0.5 shadow-[3px_3px_0px_grey] hover:animate-pulse;
     }
     @media (prefers-reduced-motion: reduce) {
         .experience-duties-panel {
@@ -144,16 +148,19 @@
         @apply ml-auto mb-7 mt-2 flex max-w-full shrink-0 flex-col items-center gap-2 max-md:mr-4;
     }
     .whoami-photo {
-        @apply h-72 w-56 overflow-hidden border-2 border-black bg-[#f7f4ed] p-0;
+        @apply h-72 w-56 overflow-hidden border-2 border-[var(--border-strong)] bg-[var(--bg)] p-0;
     }
     .photo-shuffle-dots {
         @apply flex w-56 flex-wrap justify-center gap-1.5;
     }
     .photo-shuffle-dot {
-        @apply h-2.5 w-2.5 shrink-0 border border-black bg-black p-0 transition-all;
+        @apply h-2.5 w-2.5 shrink-0 border p-0 transition-all;
+        border-color: var(--border-strong);
+        background-color: var(--text-h);
     }
     .photo-shuffle-dot-active {
-        @apply scale-125 ring-2 ring-black ring-offset-1;
+        @apply scale-125 ring-2 ring-offset-1;
+        --tw-ring-color: var(--text-h);
     }
     .photo-shuffle-found-slot {
         @apply flex min-h-5 w-56 items-center justify-center;
@@ -213,14 +220,26 @@
         @apply inline-flex w-fit items-center gap-2 px-4 py-0.5 font-medium;
     }
     .nav-social-btn-header {
-        background-color: var(--justWhite);
+        background-color: var(--bg);
+        color: var(--text-h);
         @apply min-w-[8.75rem] justify-center px-8 py-0.5;
     }
     .nav-social-btn-header:hover {
         background-color: var(--opbg);
-        @apply text-white;
+        color: var(--opbg-text);
     }
     .nav-social-btn-header:hover .nav-social-icon-header {
+        filter: brightness(0) invert(1);
+    }
+    .nav-social-btn-header-primary {
+        background-color: var(--blue);
+        color: #ffffff;
+    }
+    .nav-social-btn-header-primary:hover {
+        background-color: var(--opbg);
+        color: var(--opbg-text);
+    }
+    .nav-social-btn-header-primary .nav-social-icon-header {
         filter: brightness(0) invert(1);
     }
     .nav-social-icon {
@@ -228,6 +247,12 @@
     }
     .contact-link-btn .nav-social-icon {
         @apply h-4 w-4;
+    }
+    .contact-link-btn:hover .nav-social-icon {
+        filter: brightness(0) invert(1);
+    }
+    .contact-link-btn-primary .nav-social-icon {
+        filter: brightness(0) invert(1);
     }
     .contact-prompt {
         @apply m-0 mb-1 font-mono text-sm text-stone-600;
@@ -246,7 +271,7 @@
         @apply flex w-full flex-wrap items-center gap-2;
     }
     .contact-link-btn {
-        @apply inline-flex w-fit cursor-pointer border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all;
+        @apply inline-flex w-fit cursor-pointer border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium text-[var(--text-h)] shadow-[3px_3px_0px_grey] transition-all;
         background-color: var(--bg);
     }
     .contact-link-btn:hover {
@@ -260,7 +285,58 @@
     .contact-link-btn-primary:hover {
         background-color: var(--opbg);
     }
+    .theme-toggle {
+        @apply text-base leading-none;
+    }
   }
+
+  .dark .text-stone-900 { color: #f3eee6; }
+  .dark .text-stone-800 { color: #ddd6c9; }
+  .dark .text-stone-600 { color: #b3a99a; }
+  .dark .text-stone-500 { color: #948a7d; }
+  .dark .text-black { color: var(--text-h); }
+  .dark .text-white { color: #ffffff; }
+  .dark .border-stone-400 { border-color: #4a443c; }
+  .dark .border-black { border-color: var(--border-strong); }
+  .dark .bg-black { background-color: var(--text-h); }
+
+  .dark .my-buttonpt { color: var(--text-h); }
+  .dark .my-buttonpt:hover { color: var(--opbg-text); }
+
+  .dark .nav-social-btn-header { color: var(--text-h); }
+  .dark .nav-social-btn-header:hover { color: var(--opbg-text); }
+  .dark .nav-social-icon-header { filter: brightness(0) invert(1); }
+  .dark .nav-social-btn-header:hover .nav-social-icon-header { filter: none; }
+  .dark .nav-social-btn-header-primary,
+  .dark .nav-social-btn-header-primary:hover { color: #ffffff; }
+  .dark .nav-social-btn-header-primary .nav-social-icon-header { filter: brightness(0) invert(1); }
+  .dark .nav-social-btn-header-primary:hover .nav-social-icon-header { filter: brightness(0); }
+
+  /* Component rules that inline text-stone via @apply need explicit overrides */
+  .dark .recipe-section-title,
+  .dark .recipe-section-small,
+  .dark .reciple-section-xsmall,
+  .dark .education-date,
+  .dark .experience-date,
+  .dark .contact-location-value,
+  .dark .contact-email-link { color: var(--text-h); }
+  .dark .whoami-quote-text,
+  .dark .contact-location-label,
+  .dark .contact-prompt { color: #b3a99a; }
+  .dark .whoami-quote-author { color: #948a7d; }
+  .dark .photo-shuffle-found { color: #ddd6c9; }
+
+  .dark .contact-link-btn { color: var(--text-h); }
+  .dark .contact-link-btn:hover { color: var(--opbg-text); }
+  .dark .contact-link-btn .nav-social-icon { filter: brightness(0) invert(1); }
+  .dark .contact-link-btn:hover .nav-social-icon { filter: none; }
+  .dark .contact-link-btn-primary,
+  .dark .contact-link-btn-primary:hover { color: #ffffff; }
+  .dark .contact-link-btn-primary .nav-social-icon { filter: brightness(0) invert(1); }
+  .dark .contact-link-btn-primary:hover .nav-social-icon { filter: brightness(0); }
+
+  .dark .my-button { color: #ffffff; }
+  .dark .my-button:hover { color: var(--opbg-text); }
 
   @theme{
     --animation-fadein: 1s ease-out forwards;
