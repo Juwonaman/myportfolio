@@ -14,7 +14,7 @@ const schoolinfo = [
       linkKey: "georgiain",
       gpa: "3.0/4.0",
       degree: "Master of Science in Computer Science",
-      certs: "idk",
+      certs: "",
       date: "January 2026 - May 2028",
     },
 ];

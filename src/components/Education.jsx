@@ -34,7 +34,7 @@ function Education() {
             }
             onMouseEnter={() => setHoveredEducation(edu.school)}
             onMouseLeave={() => setHoveredEducation(null)}
-            className={`inside-section relative border-2 border-black bg-[var(--justWhite)] px-2 pt-2 pb-8 recipe-between last:pb-0 ${
+            className={`inside-section relative border-2 border-black bg-[var(--justWhite)] px-2 pt-2 pb-2 recipe-between-education ${
               hasLink ? 'cursor-pointer' : ''
             }`}
           >

@@ -1,14 +1,5 @@
-const intoit = [
-    {
-        title: "Software Engineering Intern",
-        location: "Omaha Nebraska",
-        date: "May 2025 - August 2025"
-    },
+/** Union Pacific roles — kept in sync; primary source is workExp.js positions array. */
+import workEx from "./workExp";
 
-    {
-        title: "Software Engineering Intern, Part Time",
-        location: "Remote",
-        date: "August 2025 - May 2026"
-    }
-]
-export default intoit;
+const unionEntry = workEx.find((job) => job.company === "Union Pacific Railroad");
+export default unionEntry?.positions ?? [];

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import workEx from "../data/workExp";
-import intoit from "../data/expptwo";
+import schoolLinks from "../data/links";
 
 export function CompAndRole() {
   const [index, setIndex] = useState(0);
@@ -31,10 +31,10 @@ export function CompAndRole() {
 
   return (
     <div
-      className={` transition-[filter] duration-200 ease-out ${blurred ? "blur-xs" : ""}`}
+      className={`transition-[filter] duration-200 ease-out ${blurred ? "blur-xs" : ""}`}
     >
       {"Previous "}
-      {current.role} @ {current.company}
+      {current.role ?? current.positions?.[0]?.role} @ {current.company}
     </div>
   );
 }
@@ -47,46 +47,82 @@ export function WorkExp() {
     setExpandedIndex((current) => (current === idx ? null : idx));
   };
 
+  const handleCompanyClick = (e, linkKey) => {
+    e.stopPropagation();
+    const url = schoolLinks[linkKey];
+    if (!url) return;
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section>
-      {workEx.map((comp, idx) => (
-        <div
-          key={idx}
-          className=" bg-[var(--justWhite)] cursor-pointer relative border-2 border-black  bg-[#f7f4ed] px-2 pt-2 recipe-between inside-section"
-          onClick={() => handleCardClick(idx)}
-          onMouseEnter={() => setHoveredCompany(comp.role)}
-          onMouseLeave={() => setHoveredCompany(null)}
-        >
-          <div className="experience-row">
-            {hoveredCompany === comp.role && (
-                <span className="experience-arrow-blink">{">"}</span>
-              )}
-            <h2 className="flex items-center gap-2 reciple-section-xsmall min-w-0 flex-1 cursor-pointer">
-              
-              {comp.company}
-              
-            </h2>
-            <p className="experience-date shrink-0">{comp.date}</p>
-          </div>
-          <div className="experience-card-meta">
-            <p>{comp.role}</p>
-            <p>{comp.location}</p>
-          </div>
+      {workEx.map((comp, idx) => {
+        const hoverKey = comp.positions?.length ? comp.company : comp.role;
 
+        return (
           <div
-            className={`experience-duties-panel ${expandedIndex === idx ? "is-open" : ""}`}
-            aria-hidden={expandedIndex !== idx}
+            key={idx}
+            className="inside-section relative cursor-pointer border-2 border-black bg-[var(--justWhite)] px-2 pt-2 recipe-between-education"
+            onClick={() => handleCardClick(idx)}
+            onMouseEnter={() => setHoveredCompany(hoverKey)}
+            onMouseLeave={() => setHoveredCompany(null)}
           >
-            <div className="experience-duties-inner">
-              <ul className="experience-duties-list">
-                {comp.duties.map((duty, dutyIdx) => (
-                  <li key={dutyIdx}>{duty}</li>
+            <div className="experience-row">
+              <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
+                {hoveredCompany === hoverKey && (
+                  <span className="experience-arrow-blink">{">"}</span>
+                )}
+                {comp.company}
+              </h2>
+            </div>
+
+            {comp.positions?.length ? (
+              <div className="experience-positions">
+                {comp.positions.map((pos, posIdx) => (
+                  <div key={posIdx} className="experience-position">
+                    <div className="experience-row">
+                      <p className="min-w-0 flex-1 font-medium">{pos.role}</p>
+                      <p className="experience-date shrink-0">{pos.date}</p>
+                    </div>
+                    <p>{pos.location}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            ) : (
+              <>
+                <div className="experience-card-meta">
+                  <p>{comp.role}</p>
+                </div>
+                <p>{comp.location}</p>
+              </>
+            )}
+
+            <div className="experience-row items-start gap-2">
+              {comp.linkKey && schoolLinks[comp.linkKey] && (
+                <button
+                  type="button"
+                  onClick={(e) => handleCompanyClick(e, comp.linkKey)}
+                  className="my-buttonpt w-fit shrink-0 cursor-pointer border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+                >
+                  {comp.buttonLabel ?? "Company"}
+                </button>
+              )}
+              <div
+                className={`experience-duties-panel ${expandedIndex === idx ? "is-open" : ""}`}
+                aria-hidden={expandedIndex !== idx}
+              >
+                <ul className="experience-duties-chips">
+                  {comp.duties.map((duty, dutyIdx) => (
+                    <li key={dutyIdx}>
+                      <span className="experience-skill-chip">{duty}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </section>
   );
 }
