@@ -114,7 +114,7 @@ function App() {
       <Skills />
        </section>
 
-       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+       <section className="h-105 relative border-2 border-black px-4 pt-8 recipe-between inside-section">
       <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/workExperience.md</span>
 
       <WorkExp />

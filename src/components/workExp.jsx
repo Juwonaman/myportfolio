@@ -1,17 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import workEx from "../data/workExp";
-
-/** Duty list used only to reserve height (longest across all roles). */
-function getSizingDuties(entries) {
-  if (entries.length === 0) return [];
-  return entries.reduce(
-    (longest, job) =>
-      job.duties.join("").length > longest.join("").length ? job.duties : longest,
-    entries[0].duties,
-  );
-}
-
-const sizingDuties = getSizingDuties(workEx);
+import intoit from "../data/expptwo";
 
 export function CompAndRole() {
   const [index, setIndex] = useState(0);
@@ -63,36 +52,38 @@ export function WorkExp() {
       {workEx.map((comp, idx) => (
         <div
           key={idx}
-          className="cursor-pointer"
+          className=" bg-[var(--justWhite)] cursor-pointer relative border-2 border-black  bg-[#f7f4ed] px-2 pt-2 recipe-between inside-section"
           onClick={() => handleCardClick(idx)}
           onMouseEnter={() => setHoveredCompany(comp.role)}
           onMouseLeave={() => setHoveredCompany(null)}
         >
           <div className="experience-row">
-            <h2 className="flex items-center gap-2 reciple-section-xsmall min-w-0 flex-1 cursor-pointer">
-              {comp.company}
-              {hoveredCompany === comp.role && (
+            {hoveredCompany === comp.role && (
                 <span className="experience-arrow-blink">{">"}</span>
               )}
+            <h2 className="flex items-center gap-2 reciple-section-xsmall min-w-0 flex-1 cursor-pointer">
+              
+              {comp.company}
+              
             </h2>
             <p className="experience-date shrink-0">{comp.date}</p>
           </div>
-          <p>{comp.role}</p>
-          <p>{comp.location}</p>
+          <div className="experience-card-meta">
+            <p>{comp.role}</p>
+            <p>{comp.location}</p>
+          </div>
 
-          <div className="experience-duties-panel" aria-hidden={expandedIndex !== idx}>
-            <ul className="experience-duties-sizer" aria-hidden>
-              {sizingDuties.map((duty, dutyIdx) => (
-                <li key={dutyIdx}>{duty}</li>
-              ))}
-            </ul>
-            <ul
-              className={`experience-duties-list ${expandedIndex === idx ? "" : "invisible"}`}
-            >
-              {comp.duties.map((duty, dutyIdx) => (
-                <li key={dutyIdx}>{duty}</li>
-              ))}
-            </ul>
+          <div
+            className={`experience-duties-panel ${expandedIndex === idx ? "is-open" : ""}`}
+            aria-hidden={expandedIndex !== idx}
+          >
+            <div className="experience-duties-inner">
+              <ul className="experience-duties-list">
+                {comp.duties.map((duty, dutyIdx) => (
+                  <li key={dutyIdx}>{duty}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       ))}

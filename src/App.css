@@ -52,17 +52,27 @@
     .experience-date {
         @apply text-base font-medium text-stone-900;
     }
+    .experience-card-meta {
+        @apply flex flex-col gap-0.5 leading-snug;
+    }
     .experience-duties-panel {
-        @apply relative grid w-full;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.35s ease;
     }
-    .experience-duties-panel > ul {
-        @apply col-start-1 row-start-1 list-disc space-y-1 pl-5 text-sm;
+    .experience-duties-panel.is-open {
+        grid-template-rows: 1fr;
     }
-    .experience-duties-sizer {
-        @apply invisible;
+    .experience-duties-inner {
+        overflow: hidden;
     }
     .experience-duties-list {
-        @apply absolute top-0 left-0 w-full;
+        @apply mt-1 list-disc space-y-0.5 pl-5 text-sm leading-snug;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .experience-duties-panel {
+            transition: none;
+        }
     }
     .experience-arrow-blink {
         animation: experience-arrow-blink 0.9s step-end infinite;
