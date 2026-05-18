@@ -194,8 +194,15 @@
     .contact-prompt {
         @apply m-0 mb-1 font-mono text-sm text-stone-600;
     }
+    .contact-email-row {
+        @apply m-0 flex min-w-0 items-center gap-2;
+    }
     .contact-email-link {
-        @apply break-all font-mono text-base font-medium text-stone-900 underline decoration-[var(--blue)] decoration-2 underline-offset-2 transition-colors hover:text-[var(--blue)];
+        @apply min-w-0 break-all font-mono text-base font-medium text-stone-900 underline decoration-[var(--blue)] decoration-2 underline-offset-2;
+    }
+    .contact-email-card:hover .contact-email-link,
+    .contact-email-card:focus-visible .contact-email-link {
+        @apply text-[var(--blue)];
     }
     .contact-links {
         @apply flex w-full flex-wrap items-center gap-2;
