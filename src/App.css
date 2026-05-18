@@ -23,7 +23,7 @@
         @apply relative mb-10 border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 pb-3;
     }
     .recipe-section-label {
-        @apply absolute top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic;
+        @apply absolute top-0 left-4 z-10 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-2 font-mono italic;
     }
     .recipe-between-education{
         @apply mb-6 relative;

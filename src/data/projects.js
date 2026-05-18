@@ -44,18 +44,16 @@ const projects = [
     buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/cardsync.git" }],
   },
   {
-  id: "powergrid",
-title: "Power Grid Simulator",
-description:
-  "Built a full-stack power grid simulator using React and Spring Boot to manage infrastructure, maintenance, billing, and real-time disruption events.",
-stack: [
-  "React",
-  "Java",
-  "Spring Boot",
-  "REST APIs",
-],
-buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/power-grid-simulator" }],
-},
+    id: "powergrid",
+    title: "Power Grid Simulator",
+    description:
+      "Built a full-stack power grid simulator using React and Spring Boot to manage infrastructure, maintenance, billing, and real-time disruption events.",
+    stack: ["React", "Java", "Spring Boot", "REST APIs"],
+    buttons: [
+      { label: "GitHub", url: "https://github.com/Juwonaman/power-grid-simulator" },
+      { label: "Video", url: "https://youtu.be/qiBJHDS6IBQ" },
+    ],
+  },
 ];
 
 export default projects;

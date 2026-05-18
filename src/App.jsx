@@ -64,7 +64,7 @@ function App() {
       <CompAndRole/></header>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-26">cat ~/forvisitors.md</span>
+        <span className="recipe-section-label">cat ~/forvisitors.md</span>
         <div className="visitor-content">
           <span className="max-w-2xl min-w-0">
             Hi I am Juwon, a CS graduate from KSU, a {whatIdo}
@@ -80,7 +80,7 @@ function App() {
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-16">whoami</span>
+        <span className="recipe-section-label">cat ~/whoami.md</span>
         <div className="whoami-row">
           <div className="max-w-2xl min-w-0 flex-1">
             <AboutMe />
@@ -96,27 +96,27 @@ function App() {
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-29">cat ~/workExperience.md</span>
+        <span className="recipe-section-label">cat ~/workExperience.md</span>
         <WorkExp />
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-29">cat ~/education.md</span>
+        <span className="recipe-section-label">cat ~/education.md</span>
         <Education />
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-29">ls ~/skills.md</span>
+        <span className="recipe-section-label">ls ~/skills.md</span>
         <Skills />
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-29">ls ~/projects.md</span>
+        <span className="recipe-section-label">ls ~/projects.md</span>
         <Projects />
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label left-29">ls ~/contact.md</span>
+        <span className="recipe-section-label">ls ~/contact.md</span>
         <Contact />
       </section>
 

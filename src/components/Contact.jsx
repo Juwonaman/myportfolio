@@ -49,7 +49,7 @@ function ContactEmailCard({ contact, idx }) {
 
 function Contact() {
   return (
-    <section className="contact-section">
+    <div className="contact-section">
       {contactInfo.map((contact, idx) => (
         <div key={idx} className="contact-block">
           <div className="contact-location-row">
@@ -98,7 +98,7 @@ function Contact() {
           </div>
         </div>
       ))}
-    </section>
+    </div>
   );
 }
 
