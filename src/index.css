@@ -8,6 +8,8 @@
   --opbg-text: #ffffff;
   --border: #e5e4e7;
   --border-strong: #08060d;
+  --border-inner: #a8a29e;
+  --focus-ring: #08060d;
   --blue: #107ae4;
   --justWhite: #ffffff;
   --shadow: grey;
@@ -23,7 +25,9 @@ html.dark {
   --opbg: #f3eee6;
   --opbg-text: #1a1714;
   --border: #2e2a26;
-  --border-strong: #4a443c;
+  --border-strong: var(--text-h);
+  --border-inner: var(--text-h);
+  --focus-ring: var(--text-h);
   --blue: #4ea1f0;
   --justWhite: #262220;
   --shadow: #0e0c0a;

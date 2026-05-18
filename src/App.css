@@ -19,6 +19,12 @@
     .recipe-between{
         @apply mb-10 relative;
     }
+    .recipe-section {
+        @apply relative mb-10 border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 pb-3;
+    }
+    .recipe-section-label {
+        @apply absolute top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic;
+    }
     .recipe-between-education{
         @apply mb-6 relative;
     }
@@ -66,7 +72,7 @@
         @apply mb-1 pb-2;
     }
     .experience-title-divided {
-        @apply border-b-2 border-stone-400 pb-2 mb-1;
+        @apply border-b-2 border-[var(--border-inner)] pb-2 mb-1;
     }
     .experience-positions {
         @apply mb-1 flex flex-col gap-0;
@@ -75,7 +81,7 @@
         @apply flex flex-col gap-0.5 py-2;
     }
     .experience-position + .experience-position {
-        @apply border-t-2 border-stone-400 pt-3;
+        @apply border-t-2 border-[var(--border-inner)] pt-3;
     }
     .experience-duties-panel {
         @apply min-w-0 flex-1 overflow-hidden pr-1 pb-1;
@@ -110,7 +116,8 @@
         outline: none;
     }
     .arrow-nav-card:focus-visible {
-        @apply outline-2 outline-offset-2 outline-stone-900;
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
     }
     .experience-arrow-blink {
         animation: experience-arrow-blink 0.9s step-end infinite;
@@ -136,7 +143,7 @@
         @apply flex w-full flex-row flex-wrap items-start gap-6;
     }
     .whoami-quote {
-        @apply mt-0 border-l-2 border-stone-400 pl-3;
+        @apply mt-0 border-l-2 border-[var(--border-inner)] pl-3;
     }
     .whoami-quote-text {
         @apply m-0 font-mono text-sm italic text-stone-600;
@@ -196,7 +203,7 @@
         @apply flex flex-col gap-5 pb-1;
     }
     .contact-location-row {
-        @apply flex w-full flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b-2 border-stone-400 pb-3;
+        @apply flex w-full flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b-2 border-[var(--border-inner)] pb-3;
     }
     .contact-location-label {
         @apply m-0 font-mono text-sm italic text-stone-600;
@@ -205,13 +212,13 @@
         @apply m-0 text-base font-medium text-stone-900;
     }
     .contact-email-card {
-        @apply border-2 border-stone-400 bg-[var(--justWhite)] px-4 py-3;
+        @apply border-2 border-[var(--border-inner)] bg-[var(--justWhite)] px-4 py-3;
     }
     .experience-card-inner {
         @apply flex min-w-0 items-start gap-3;
     }
     .experience-logo {
-        @apply h-16 w-16 shrink-0 border-2 border-stone-400 bg-[var(--justWhite)] object-contain p-1;
+        @apply h-16 w-16 shrink-0 border-2 border-[var(--border-inner)] bg-[var(--justWhite)] object-contain p-1;
     }
     .experience-card-content {
         @apply min-w-0 flex-1;
@@ -276,7 +283,7 @@
     }
     .contact-link-btn:hover {
         background-color: var(--opbg);
-        @apply text-white;
+        color: var(--opbg-text);
     }
     .contact-link-btn-primary {
         background-color: var(--blue);
@@ -284,9 +291,13 @@
     }
     .contact-link-btn-primary:hover {
         background-color: var(--opbg);
+        color: var(--opbg-text);
     }
     .theme-toggle {
-        @apply text-base leading-none;
+        @apply inline-flex h-8 w-10 shrink-0 items-center justify-center py-0.5;
+    }
+    .theme-toggle-icon {
+        @apply inline-block w-5 text-center text-base leading-none;
     }
   }
 
@@ -307,8 +318,8 @@
   .dark .nav-social-btn-header:hover { color: var(--opbg-text); }
   .dark .nav-social-icon-header { filter: brightness(0) invert(1); }
   .dark .nav-social-btn-header:hover .nav-social-icon-header { filter: none; }
-  .dark .nav-social-btn-header-primary,
-  .dark .nav-social-btn-header-primary:hover { color: #ffffff; }
+  .dark .nav-social-btn-header-primary { color: #ffffff; }
+  .dark .nav-social-btn-header-primary:hover { color: var(--opbg-text); }
   .dark .nav-social-btn-header-primary .nav-social-icon-header { filter: brightness(0) invert(1); }
   .dark .nav-social-btn-header-primary:hover .nav-social-icon-header { filter: brightness(0); }
 
@@ -330,8 +341,8 @@
   .dark .contact-link-btn:hover { color: var(--opbg-text); }
   .dark .contact-link-btn .nav-social-icon { filter: brightness(0) invert(1); }
   .dark .contact-link-btn:hover .nav-social-icon { filter: none; }
-  .dark .contact-link-btn-primary,
-  .dark .contact-link-btn-primary:hover { color: #ffffff; }
+  .dark .contact-link-btn-primary { color: #ffffff; }
+  .dark .contact-link-btn-primary:hover { color: var(--opbg-text); }
   .dark .contact-link-btn-primary .nav-social-icon { filter: brightness(0) invert(1); }
   .dark .contact-link-btn-primary:hover .nav-social-icon { filter: brightness(0); }
 

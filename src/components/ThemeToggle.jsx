@@ -33,9 +33,11 @@ function ThemeToggle() {
       onClick={() => setTheme(next)}
       aria-label={`Switch to ${next} mode`}
       title={`Switch to ${next} mode`}
-      className="theme-toggle cursor-pointer my-buttonpt w-fit border-2 border-[var(--border-strong)] px-3 py-1.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
+      className="theme-toggle cursor-pointer my-buttonpt border-2 border-[var(--border-strong)] font-medium shadow-[3px_3px_0px_grey] transition-all"
     >
-      <span aria-hidden="true">{isDark ? '☼' : '☾'}</span>
+      <span className="theme-toggle-icon" aria-hidden="true">
+        {isDark ? '☼' : '☾'}
+      </span>
     </button>
   );
 }

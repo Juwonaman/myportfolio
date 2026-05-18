@@ -29,7 +29,7 @@ function EducationCard({ edu, idx }) {
       onKeyDown={hasLink ? arrowNav.onKeyDown : undefined}
       onMouseEnter={() => setHoveredEducation(true)}
       onMouseLeave={() => setHoveredEducation(false)}
-      className={`inside-section relative border-2 border-stone-400 bg-[var(--justWhite)] px-2 pt-2 pb-2 ${
+      className={`inside-section relative border-2 border-[var(--border-inner)] bg-[var(--justWhite)] px-2 pt-2 pb-2 ${
         hasLink ? `cursor-pointer arrow-nav-card ${arrowNav.className}` : ""
       }`}
     >

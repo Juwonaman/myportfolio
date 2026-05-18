@@ -61,7 +61,7 @@ function WorkExpCard({
       tabIndex={arrowNav.tabIndex}
       role="button"
       aria-expanded={expandedIndex === idx}
-      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-stone-400 bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
+      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-[var(--border-inner)] bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
       onClick={() => onCardClick(idx)}
       onFocus={arrowNav.onFocus}
       onKeyDown={arrowNav.onKeyDown}

@@ -63,14 +63,8 @@ function App() {
     </div>
       <CompAndRole/></header>
 
-
-
-
-
-      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
-        <span className="absolute left-26 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">cat ~/forvisitors.md</span>
-        
-        
+      <section className="recipe-section">
+        <span className="recipe-section-label left-26">cat ~/forvisitors.md</span>
         <div className="visitor-content">
           <span className="max-w-2xl min-w-0">
             Hi I am Juwon, a CS graduate from KSU, a {whatIdo}
@@ -85,11 +79,8 @@ function App() {
         </div>
       </section>
 
-
-      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section ">
-        <span className="absolute left-16 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">
-          whoami
-        </span>
+      <section className="recipe-section">
+        <span className="recipe-section-label left-16">whoami</span>
         <div className="whoami-row">
           <div className="max-w-2xl min-w-0 flex-1">
             <AboutMe />
@@ -104,38 +95,30 @@ function App() {
         </blockquote>
       </section>
 
-      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">cat ~/workExperience.md</span>
-
-      <WorkExp />
-       </section>
-      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">cat ~/education.md</span>
-
-     
-      <Education />
+      <section className="recipe-section">
+        <span className="recipe-section-label left-29">cat ~/workExperience.md</span>
+        <WorkExp />
       </section>
 
-      <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">ls ~/skills.md</span>
+      <section className="recipe-section">
+        <span className="recipe-section-label left-29">cat ~/education.md</span>
+        <Education />
+      </section>
 
-     
-      <Skills />
-       </section>
+      <section className="recipe-section">
+        <span className="recipe-section-label left-29">ls ~/skills.md</span>
+        <Skills />
+      </section>
 
-       
+      <section className="recipe-section">
+        <span className="recipe-section-label left-29">ls ~/projects.md</span>
+        <Projects />
+      </section>
 
-       <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">ls ~/projects.md</span>
-
-      <Projects />  
-       </section>
-
-       <section className="relative border-2 border-[var(--border-strong)] bg-[var(--bg)] px-4 pt-8 recipe-between inside-section">
-      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[var(--bg)] px-4 font-mono italic">ls ~/contact.md</span>
-
-      <Contact />  
-       </section>
+      <section className="recipe-section">
+        <span className="recipe-section-label left-29">ls ~/contact.md</span>
+        <Contact />
+      </section>
 
       </ScrollFadeIn>
       </ArrowNavProvider>
