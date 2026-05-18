@@ -92,7 +92,7 @@ function WorkExpCard({
             <div key={posIdx} className="experience-position">
               <div className="experience-row">
                 <p className="min-w-0 flex-1 font-bold">{pos.role}</p>
-                <p className="experience-date shrink-0">{pos.date}</p>
+                <p className="experience-date">{pos.date}</p>
               </div>
               <p className="text-stone-500">{pos.location}</p>
             </div>
@@ -107,7 +107,7 @@ function WorkExpCard({
         </div>
       )}
 
-      <div className="experience-row items-start gap-2">
+      <div className="card-actions-row experience-row items-start gap-2">
         <div
           className={`experience-duties-panel ${expandedIndex === idx ? "is-open" : ""}`}
           aria-hidden={expandedIndex !== idx}
@@ -124,7 +124,7 @@ function WorkExpCard({
           <button
             type="button"
             onClick={(e) => onCompanyClick(e, comp)}
-            className="my-buttonpt ml-auto w-fit shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
+            className="my-buttonpt ml-auto w-fit max-w-full shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
           >
             {comp.buttonLabel ?? "Company"}
           </button>

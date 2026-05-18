@@ -47,7 +47,7 @@ function EducationCard({ edu, idx }) {
               {showArrow && <span className="experience-arrow-blink">{">"}</span>}
               {edu.school}
             </h2>
-            <p className="education-date shrink-0">{edu.date}</p>
+            <p className="education-date">{edu.date}</p>
           </div>
           <h3>{edu.degree}</h3>
           <p>GPA: {edu.gpa}</p>

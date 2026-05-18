@@ -40,7 +40,7 @@ function ProjectCard({
       </div>
       <p className="project-description">{project.description}</p>
 
-      <div className="experience-row items-start gap-2">
+      <div className="card-actions-row experience-row items-start gap-2">
         <div
           className="experience-duties-panel project-stack-panel min-w-0 flex-1 is-open"
           aria-hidden="false"
@@ -54,7 +54,7 @@ function ProjectCard({
           </ul>
         </div>
         <div
-          className="ml-auto flex shrink-0 flex-wrap gap-2"
+          className="card-actions-buttons ml-auto flex shrink-0 flex-wrap gap-2"
           onClick={(e) => e.stopPropagation()}
         >
           {project.buttons?.map((button, btnIdx) => (
@@ -62,7 +62,7 @@ function ProjectCard({
               key={btnIdx}
               type="button"
               onClick={(e) => onButtonClick(e, button)}
-              className="my-buttonpt w-fit shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
+              className="my-buttonpt w-fit max-w-full shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
             >
               {button.label}
             </button>

@@ -33,6 +33,10 @@ html.dark {
   --shadow: #0e0c0a;
 }
 
+html {
+  overflow-x: clip;
+}
+
 html,
 body {
   margin: 0;
@@ -42,8 +46,19 @@ body {
 }
 
 main {
+  box-sizing: border-box;
+  width: 100%;
   max-width: 70rem;
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+@media (max-width: 639px) {
+  main {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
 }

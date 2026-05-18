@@ -72,27 +72,29 @@ function App() {
           <button
             type="button"
             onClick={openResume}
-            className="cursor-pointer my-buttonpt ml-auto w-fit shrink-0 border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
+            className="cursor-pointer my-buttonpt ml-auto w-fit max-w-full shrink-0 border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
           >
             Resume
           </button>
         </div>
       </section>
 
-      <section className="recipe-section">
+      <section className="recipe-section whoami-section">
         <span className="recipe-section-label">whoami</span>
-        <div className="whoami-row">
-          <div className="max-w-2xl min-w-0 flex-1">
-            <AboutMe />
+        <div className="whoami-body">
+          <div className="whoami-main">
+            <div className="whoami-about max-w-2xl min-w-0">
+              <AboutMe />
+            </div>
+            <blockquote className="whoami-quote">
+              <p className="whoami-quote-text">
+                “A ship in harbor is safe, but that is not what ships are built for.”
+              </p>
+              <footer className="whoami-quote-author">— John A. Shedd</footer>
+            </blockquote>
           </div>
           <PhotoShuffle />
         </div>
-        <blockquote className="whoami-quote">
-          <p className="whoami-quote-text">
-            “A ship in harbor is safe, but that is not what ships are built for.”
-          </p>
-          <footer className="whoami-quote-author">— John A. Shedd</footer>
-        </blockquote>
       </section>
 
       <section className="recipe-section">
