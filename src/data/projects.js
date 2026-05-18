@@ -25,7 +25,7 @@ const projects = [
     description:
       "Built an aquarium fish compatibility app that recommends compatible tank mates and generates fish care summaries using species data and AI.",
     stack: ["React", "Node.js", "PostgreSQL", "OpenAI API", "Supabase"],
-    buttons: [{ label: "GitHub", url: "" }],
+    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/ai_fish.git" }],
   },
   {
     id: "cardsync",
@@ -41,8 +41,21 @@ const projects = [
       "Plaid Sandbox",
       "OpenAI API",
     ],
-    buttons: [{ label: "GitHub", url: "" }],
+    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/cardsync.git" }],
   },
+  {
+  id: "powergrid",
+title: "Power Grid Simulator",
+description:
+  "Built a full-stack power grid simulator using React and Spring Boot to manage infrastructure, maintenance, billing, and real-time disruption events.",
+stack: [
+  "React",
+  "Java",
+  "Spring Boot",
+  "REST APIs",
+],
+buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/power-grid-simulator" }],
+},
 ];
 
 export default projects;

@@ -11,6 +11,7 @@ import Typewriter from 'typewriter-effect';
 import ScrollFadeIn from './components/ScrollFadeIn';
 import { openGitHub, openInstagram, openLinkedIn, openResume } from './components/buttonTask';
 import PhotoShuffle from './components/photshuffle';
+import Contact from './components/Contact';
 import { ArrowNavProvider } from './context/ArrowNavContext';
 
 
@@ -127,6 +128,12 @@ function App() {
       <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/projects.md</span>
 
       <Projects />  
+       </section>
+
+       <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
+      <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">ls ~/contact.md</span>
+
+      <Contact />  
        </section>
 
       </ScrollFadeIn>

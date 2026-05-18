@@ -90,29 +90,20 @@ function WorkExpCard({
           ))}
         </div>
       ) : (
-        <>
+        <div className="experience-card-body">
           <div className="experience-card-meta">
             <p>{comp.role}</p>
           </div>
           <p>{comp.location}</p>
-        </>
+        </div>
       )}
 
       <div className="experience-row items-start gap-2">
-        {comp.linkKey && schoolLinks[comp.linkKey] && (
-          <button
-            type="button"
-            onClick={(e) => onCompanyClick(e, comp.linkKey)}
-            className="my-buttonpt w-fit shrink-0 cursor-pointer border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
-          >
-            {comp.buttonLabel ?? "Company"}
-          </button>
-        )}
         <div
           className={`experience-duties-panel ${expandedIndex === idx ? "is-open" : ""}`}
           aria-hidden={expandedIndex !== idx}
         >
-          <ul className="experience-duties-chips">
+          <ul className="experience-duties-chips experience-duties-chips-start">
             {comp.duties.map((duty, dutyIdx) => (
               <li key={dutyIdx}>
                 <span className="experience-skill-chip">{duty}</span>
@@ -120,6 +111,15 @@ function WorkExpCard({
             ))}
           </ul>
         </div>
+        {comp.linkKey && schoolLinks[comp.linkKey] && (
+          <button
+            type="button"
+            onClick={(e) => onCompanyClick(e, comp.linkKey)}
+            className="my-buttonpt ml-auto w-fit shrink-0 cursor-pointer border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
+          >
+            {comp.buttonLabel ?? "Company"}
+          </button>
+        )}
       </div>
     </div>
   );

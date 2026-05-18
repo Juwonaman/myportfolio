@@ -40,11 +40,23 @@ function ProjectCard({
           {project.title}
         </h2>
       </div>
-      <p className="mt-1 leading-snug">{project.description}</p>
+      <p className="experience-card-body mt-1 leading-snug">{project.description}</p>
 
-      <div className="experience-row items-start gap-2 mt-2">
+      <div className="experience-row items-start gap-2">
         <div
-          className="flex shrink-0 flex-wrap gap-2"
+          className={`experience-duties-panel project-stack-panel min-w-0 flex-1 ${isExpanded ? "is-open" : ""}`}
+          aria-hidden={!isExpanded}
+        >
+          <ul className="experience-duties-chips experience-duties-chips-start">
+            {project.stack.map((tech, techIdx) => (
+              <li key={techIdx}>
+                <span className="experience-skill-chip">{tech}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div
+          className="ml-auto flex shrink-0 flex-wrap gap-2"
           onClick={(e) => e.stopPropagation()}
         >
           {project.buttons?.map((button, btnIdx) => (
@@ -57,18 +69,6 @@ function ProjectCard({
               {button.label}
             </button>
           ))}
-        </div>
-        <div
-          className={`experience-duties-panel project-stack-panel min-w-0 flex-1 ${isExpanded ? "is-open" : ""}`}
-          aria-hidden={!isExpanded}
-        >
-          <ul className="experience-duties-chips">
-            {project.stack.map((tech, techIdx) => (
-              <li key={techIdx}>
-                <span className="experience-skill-chip">{tech}</span>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </div>
