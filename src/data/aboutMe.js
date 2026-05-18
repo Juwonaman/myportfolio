@@ -10,7 +10,7 @@ const aboutMe = [
     },
     { text: "Union Pacific", href: "https://www.up.com/" },
     {
-      text: ", one of the largest railroad companies in the United States, worked as a Teaching and Research Assistant, and presented research at the KSU Symposium before graduating in 2025."
+      text: ", one of the largest railroad companies in the United States, worked as a Research Assistant, and presented research at the KSU Symposium before graduating in 2025."
     }
   ],
   "Outside of coding, I’m usually at the gym, into aquascaping and biology, playing video games, or working on side projects that I convinced my self \"shouldnt take longer than a weekend.\"",

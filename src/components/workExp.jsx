@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import workEx from "../data/workExp";
 import schoolLinks from "../data/links";
 import { useArrowCard } from "../context/ArrowNavContext";
+import { ExperienceLogo } from "./ExperienceLogo";
 
 export function CompAndRole() {
   const [index, setIndex] = useState(0);
@@ -69,13 +70,12 @@ function WorkExpCard({
       onMouseLeave={() => setHoveredCompany(null)}
     >
       <div className="experience-card-inner">
-        {comp.image && (
-          <img
-            src={comp.image}
-            alt={comp.imageAlt ?? comp.company}
-            className="experience-logo"
-          />
-        )}
+        <ExperienceLogo
+          image={comp.image}
+          imageAlt={comp.imageAlt}
+          label={comp.company}
+          linkKey={comp.logoLinkKey}
+        />
         <div className="experience-card-content">
       <div
         className={`experience-row ${comp.linkKey === "union" ? "experience-title-divided" : ""}`}

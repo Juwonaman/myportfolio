@@ -151,6 +151,9 @@
     .about-me-paragraph {
         @apply m-0 leading-loose;
     }
+    .about-me-paragraph a {
+        @apply underline decoration-[var(--blue)] decoration-2 underline-offset-2;
+    }
     .project-description {
         @apply m-0 mt-1 mb-4 leading-loose;
     }
@@ -246,6 +249,13 @@
     }
     .experience-card-inner {
         @apply flex min-w-0 items-start gap-3;
+    }
+    .experience-logo-link {
+        @apply block shrink-0 cursor-pointer rounded-sm transition-opacity hover:opacity-80;
+    }
+    .experience-logo-link:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
     }
     .experience-logo {
         @apply h-16 w-16 shrink-0 border-2 border-[var(--border-inner)] bg-[var(--justWhite)] object-contain p-1;

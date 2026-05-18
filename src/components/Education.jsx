@@ -2,6 +2,7 @@ import { useState } from "react";
 import education from "../data/educationMy";
 import schoolLinks from "../data/links";
 import { useArrowCard } from "../context/ArrowNavContext";
+import { ExperienceLogo } from "./ExperienceLogo";
 
 function EducationCard({ edu, idx }) {
   const [hoveredEducation, setHoveredEducation] = useState(false);
@@ -34,13 +35,12 @@ function EducationCard({ edu, idx }) {
       }`}
     >
       <div className="experience-card-inner">
-        {edu.image && (
-          <img
-            src={edu.image}
-            alt={edu.imageAlt ?? edu.school}
-            className="experience-logo"
-          />
-        )}
+        <ExperienceLogo
+          image={edu.image}
+          imageAlt={edu.imageAlt}
+          label={edu.school}
+          linkKey={edu.linkKey}
+        />
         <div className="experience-card-content">
           <div className="education-row">
             <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
