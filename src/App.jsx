@@ -80,7 +80,7 @@ function App() {
       </section>
 
       <section className="recipe-section">
-        <span className="recipe-section-label">cat ~/whoami.md</span>
+        <span className="recipe-section-label">whoami</span>
         <div className="whoami-row">
           <div className="max-w-2xl min-w-0 flex-1">
             <AboutMe />

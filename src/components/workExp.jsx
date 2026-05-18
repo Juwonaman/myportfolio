@@ -159,7 +159,6 @@ function WorkPicturesModal({ company, pictures = [], onClose }) {
         aria-label={`${company} pictures`}
         onClick={(e) => e.stopPropagation()}
       >
-        <span className="recipe-section-label">open ~/pictures</span>
         <button
           type="button"
           className="experience-picture-close my-buttonpt cursor-pointer border-2 border-[var(--border-strong)] px-3 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
@@ -172,12 +171,16 @@ function WorkPicturesModal({ company, pictures = [], onClose }) {
         {pictures.length ? (
           <div className="experience-picture-grid">
             {pictures.map((picture, pictureIdx) => (
-              <img
-                key={pictureIdx}
-                src={picture.src}
-                alt={picture.alt ?? `${company} picture ${pictureIdx + 1}`}
-                className="experience-picture"
-              />
+              <article key={pictureIdx} className="experience-picture-card">
+                <img
+                  src={picture.src}
+                  alt={picture.alt ?? `${company} picture ${pictureIdx + 1}`}
+                  className="experience-picture"
+                />
+                <p className="experience-picture-description">
+                  {picture.description}
+                </p>
+              </article>
             ))}
           </div>
         ) : (
