@@ -58,11 +58,17 @@
     .experience-card-meta {
         @apply flex flex-col gap-0.5 leading-snug;
     }
+    .experience-title-divided {
+        @apply border-b-2 border-black pb-2 mb-1;
+    }
     .experience-positions {
-        @apply mb-1 flex flex-col gap-3;
+        @apply mb-1 flex flex-col gap-0;
     }
     .experience-position {
-        @apply flex flex-col gap-0.5;
+        @apply flex flex-col gap-0.5 py-2;
+    }
+    .experience-position + .experience-position {
+        @apply border-t-2 border-black pt-3;
     }
     .experience-duties-panel {
         @apply min-w-0 flex-1 overflow-hidden pr-1 pb-1;

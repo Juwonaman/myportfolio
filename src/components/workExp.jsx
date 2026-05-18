@@ -68,7 +68,9 @@ function WorkExpCard({
       onMouseEnter={() => setHoveredCompany(hoverKey)}
       onMouseLeave={() => setHoveredCompany(null)}
     >
-      <div className="experience-row">
+      <div
+        className={`experience-row ${comp.linkKey === "union" ? "experience-title-divided" : ""}`}
+      >
         <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
           {showArrow && <span className="experience-arrow-blink">{">"}</span>}
           {comp.company}
