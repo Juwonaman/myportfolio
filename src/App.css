@@ -246,16 +246,20 @@
         @apply absolute right-4 top-4 z-10;
     }
     .experience-picture-grid {
-        @apply grid h-full min-h-0 grid-cols-2 gap-x-3 gap-y-4 overflow-y-auto pr-1 md:grid-cols-3;
+        @apply grid min-h-0 flex-1 grid-cols-2 gap-x-3 overflow-y-auto pr-1 md:grid-cols-3;
+        align-content: start;
+        align-items: start;
+        row-gap: 2rem;
     }
     .experience-picture-card {
-        @apply flex min-h-0 flex-col gap-1;
+        @apply flex min-h-0 flex-col;
+        gap: 0;
     }
     .experience-picture {
-        @apply h-36 w-full border-2 border-[var(--border-inner)] bg-[var(--justWhite)] object-cover;
+        @apply block h-36 w-full border-2 border-[var(--border-inner)] bg-[var(--justWhite)] object-cover;
     }
     .experience-picture-description {
-        @apply m-0 px-1 text-xs leading-snug text-stone-900;
+        @apply m-0 px-1 pt-0.5 text-xs leading-tight text-stone-900;
     }
     .experience-picture-empty {
         @apply flex h-full items-center justify-center border-2 border-[var(--border-inner)] bg-[var(--justWhite)] p-4 text-center font-mono text-sm italic text-stone-600;
@@ -366,6 +370,7 @@
   .dark .reciple-section-xsmall,
   .dark .education-date,
   .dark .experience-date,
+  .dark .experience-picture-description,
   .dark .contact-location-value,
   .dark .contact-email-link { color: var(--text-h); }
   .dark .whoami-quote-text,

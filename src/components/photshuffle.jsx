@@ -1,25 +1,17 @@
 import { useEffect, useState } from 'react';
-import dsc0097 from '../data/DSC_0097.JPEG';
-import img1015 from '../data/IMG_1015.jpg';
-import img2080 from '../data/IMG_2080.JPG';
-import img2106 from '../data/IMG_2106.jpg';
-import img3991 from '../data/IMG_3991.jpg';
-import img4240 from '../data/IMG_4240.jpg';
-import img4494 from '../data/IMG_4494.jpg';
-import img7604 from '../data/IMG_7604.jpg';
 
 /** Shown in the carousel and dots — IMG_7604 is easter-egg back only, not listed here. */
 export const photos = [
-  { id: 'dsc0097', src: dsc0097, alt: 'Photo DSC_0097' },
-  { id: 'img1015', src: img1015, alt: 'Photo IMG_1015' },
-  { id: 'img2080', src: img2080, alt: 'Photo IMG_2080' },
-  { id: 'img2106', src: img2106, alt: 'Photo IMG_2106' },
-  { id: 'img4240', src: img4240, alt: 'Photo IMG_4240' },
-  { id: 'img4494', src: img4494, alt: 'Photo IMG_4494' },
+  { id: 'dsc0097', src: '/pictures/DSC_0097.jpg', alt: 'Photo DSC_0097' },
+  { id: 'img1015', src: '/pictures/IMG_1015.jpg', alt: 'Photo IMG_1015' },
+  { id: 'img2080', src: '/pictures/IMG_2080.jpg', alt: 'Photo IMG_2080' },
+  { id: 'img2106', src: '/pictures/IMG_2106.jpg', alt: 'Photo IMG_2106' },
+  { id: 'img4240', src: '/pictures/IMG_4240.jpg', alt: 'Photo IMG_4240' },
+  { id: 'img4494', src: '/pictures/IMG_4494.jpg', alt: 'Photo IMG_4494' },
 ];
 
 const IMG_2106_ID = 'img2106';
-const easterEggBack = { id: 'img7604', src: img7604, alt: 'Photo IMG_7604' };
+const easterEggBack = { id: 'img7604', src: '/pictures/IMG_7604.jpg', alt: 'Photo IMG_7604' };
 const SHUFFLE_MS = 3500;
 
 export default function PhotoShuffle() {
@@ -84,6 +76,8 @@ export default function PhotoShuffle() {
                 src={img2106Photo.src}
                 alt={img2106Photo.alt}
                 className="block h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="whoami-photo-face whoami-photo-face-back ">
@@ -91,6 +85,8 @@ export default function PhotoShuffle() {
                 src={easterEggBack.src}
                 alt={easterEggBack.alt}
                 className="block h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -99,6 +95,8 @@ export default function PhotoShuffle() {
             src={current.src}
             alt={current.alt}
             className="block h-full w-full object-cover "
+            loading="lazy"
+            decoding="async"
           />
         )}
       </div>

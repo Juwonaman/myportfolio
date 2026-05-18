@@ -13,7 +13,7 @@ const aboutMe = [
       text: ", one of the largest railroad companies in the United States, worked as a Teaching and Research Assistant, and presented research at the KSU Symposium before graduating in 2025."
     }
   ],
-  "Outside of coding, I’m usually at the gym, into aquascaping and biology, playing video games, or working on side projects that I convinced my safe \"shouldnt take longer than a weekend.\"",
+  "Outside of coding, I’m usually at the gym, into aquascaping and biology, playing video games, or working on side projects that I convinced my self \"shouldnt take longer than a weekend.\"",
   "Feel free to reach out to me on LinkedIn!"
 ];
   const whatIdo= 'Full Stack Developer. Passionate about using code to solve complex problems and build meaningful solutions, and a coffee addict.'

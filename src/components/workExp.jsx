@@ -176,6 +176,8 @@ function WorkPicturesModal({ company, pictures = [], onClose }) {
                   src={picture.src}
                   alt={picture.alt ?? `${company} picture ${pictureIdx + 1}`}
                   className="experience-picture"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <p className="experience-picture-description">
                   {picture.description}
