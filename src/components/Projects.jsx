@@ -40,7 +40,7 @@ function ProjectCard({
           {project.title}
         </h2>
       </div>
-      <p className="experience-card-body mt-1 leading-snug">{project.description}</p>
+      <p className="project-description">{project.description}</p>
 
       <div className="experience-row items-start gap-2">
         <div
@@ -90,7 +90,7 @@ export default function Projects() {
   };
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-6">
       {projects.map((project) => (
         <ProjectCard
           key={project.id}

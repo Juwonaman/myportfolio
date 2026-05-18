@@ -3,9 +3,9 @@ import aboutMe from '../data/aboutMe';
 
 function AboutMe() {
   return (
-    <section>
+    <section className="about-me-prose">
       {aboutMe.map((paragraph, idx) => (
-        <p key={idx}>
+        <p key={idx} className="about-me-paragraph">
           {typeof paragraph === 'string'
             ? paragraph
             : paragraph.map((chunk, chunkIdx) =>

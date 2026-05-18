@@ -139,6 +139,18 @@
     .visitor-content {
         @apply flex w-full max-w-full flex-row flex-wrap items-start justify-start gap-4;
     }
+    .visitor-intro {
+        @apply leading-loose;
+    }
+    .about-me-prose {
+        @apply flex flex-col gap-6;
+    }
+    .about-me-paragraph {
+        @apply m-0 leading-loose;
+    }
+    .project-description {
+        @apply m-0 mt-1 mb-4 leading-loose;
+    }
     .whoami-row {
         @apply flex w-full flex-row flex-wrap items-start gap-6;
     }

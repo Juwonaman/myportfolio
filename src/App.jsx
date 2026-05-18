@@ -66,7 +66,7 @@ function App() {
       <section className="recipe-section">
         <span className="recipe-section-label">cat ~/forvisitors.md</span>
         <div className="visitor-content">
-          <span className="max-w-2xl min-w-0">
+          <span className="visitor-intro max-w-2xl min-w-0">
             Hi I am Juwon, a CS graduate from KSU, a {whatIdo}
           </span>
           <button
