@@ -123,7 +123,7 @@ function WorkExpCard({
         {comp.linkKey && schoolLinks[comp.linkKey] && (
           <button
             type="button"
-            onClick={(e) => onCompanyClick(e, comp.linkKey)}
+            onClick={(e) => onCompanyClick(e, comp)}
             className="my-buttonpt ml-auto w-fit shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-7 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
           >
             {comp.buttonLabel ?? "Company"}
@@ -136,40 +136,111 @@ function WorkExpCard({
   );
 }
 
+function WorkPicturesModal({ company, pictures = [], onClose }) {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="experience-picture-backdrop"
+      role="presentation"
+      onClick={onClose}
+    >
+      <section
+        className="experience-picture-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${company} pictures`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span className="recipe-section-label">open ~/pictures</span>
+        <button
+          type="button"
+          className="experience-picture-close my-buttonpt cursor-pointer border-2 border-[var(--border-strong)] px-3 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all"
+          onClick={onClose}
+          aria-label="Close pictures"
+        >
+          x
+        </button>
+
+        {pictures.length ? (
+          <div className="experience-picture-grid">
+            {pictures.map((picture, pictureIdx) => (
+              <img
+                key={pictureIdx}
+                src={picture.src}
+                alt={picture.alt ?? `${company} picture ${pictureIdx + 1}`}
+                className="experience-picture"
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="experience-picture-empty">
+            Add your pictures to this experience entry and they will show here.
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}
+
 export function WorkExp() {
   const [hoveredCompany, setHoveredCompany] = useState(null);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [pictureModalCompany, setPictureModalCompany] = useState(null);
 
   const handleCardClick = (idx) => {
     setExpandedIndex((current) => (current === idx ? null : idx));
   };
 
-  const handleCompanyClick = (e, linkKey) => {
+  const handleCompanyClick = (e, comp) => {
     e.stopPropagation();
+    if (comp.buttonLabel === "Pictures") {
+      setPictureModalCompany(comp);
+      return;
+    }
+
+    const linkKey = comp.linkKey;
     const url = schoolLinks[linkKey];
     if (!url) return;
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <section className="flex flex-col gap-4">
-      {workEx.map((comp, idx) => {
-        const hoverKey = comp.positions?.length ? comp.company : comp.role;
+    <>
+      <section className="flex flex-col gap-4">
+        {workEx.map((comp, idx) => {
+          const hoverKey = comp.positions?.length ? comp.company : comp.role;
 
-        return (
-          <WorkExpCard
-            key={idx}
-            comp={comp}
-            idx={idx}
-            hoverKey={hoverKey}
-            hoveredCompany={hoveredCompany}
-            setHoveredCompany={setHoveredCompany}
-            expandedIndex={expandedIndex}
-            onCardClick={handleCardClick}
-            onCompanyClick={handleCompanyClick}
-          />
-        );
-      })}
-    </section>
+          return (
+            <WorkExpCard
+              key={idx}
+              comp={comp}
+              idx={idx}
+              hoverKey={hoverKey}
+              hoveredCompany={hoveredCompany}
+              setHoveredCompany={setHoveredCompany}
+              expandedIndex={expandedIndex}
+              onCardClick={handleCardClick}
+              onCompanyClick={handleCompanyClick}
+            />
+          );
+        })}
+      </section>
+
+      {pictureModalCompany && (
+        <WorkPicturesModal
+          company={pictureModalCompany.company}
+          pictures={pictureModalCompany.pictures}
+          onClose={() => setPictureModalCompany(null)}
+        />
+      )}
+    </>
   );
 }

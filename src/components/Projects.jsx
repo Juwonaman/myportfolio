@@ -4,18 +4,16 @@ import { useArrowCard } from "../context/ArrowNavContext";
 
 function ProjectCard({
   project,
-  expandedKey,
-  onCardClick,
+  onCardActivate,
   hoveredTitle,
   onHover,
   onButtonClick,
 }) {
   const cardKey = project.id;
-  const isExpanded = expandedKey === cardKey;
   const isHovered = hoveredTitle === cardKey;
 
   const arrowNav = useArrowCard(`project-${cardKey}`, {
-    onActivate: () => onCardClick(cardKey),
+    onActivate: () => onCardActivate(project),
   });
   const showArrow = arrowNav.isFocused || isHovered;
 
@@ -24,9 +22,9 @@ function ProjectCard({
       ref={arrowNav.ref}
       tabIndex={arrowNav.tabIndex}
       role="button"
-      aria-expanded={isExpanded}
+      aria-label={`Open ${project.title} on GitHub`}
       className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-[var(--border-inner)] bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
-      onClick={() => onCardClick(cardKey)}
+      onClick={() => onCardActivate(project)}
       onFocus={arrowNav.onFocus}
       onKeyDown={arrowNav.onKeyDown}
       onMouseEnter={() => onHover(cardKey)}
@@ -44,8 +42,8 @@ function ProjectCard({
 
       <div className="experience-row items-start gap-2">
         <div
-          className={`experience-duties-panel project-stack-panel min-w-0 flex-1 ${isExpanded ? "is-open" : ""}`}
-          aria-hidden={!isExpanded}
+          className="experience-duties-panel project-stack-panel min-w-0 flex-1 is-open"
+          aria-hidden="false"
         >
           <ul className="experience-duties-chips experience-duties-chips-start">
             {project.stack.map((tech, techIdx) => (
@@ -77,10 +75,15 @@ function ProjectCard({
 
 export default function Projects() {
   const [hoveredTitle, setHoveredTitle] = useState(null);
-  const [expandedKey, setExpandedKey] = useState(null);
 
-  const handleCardClick = (key) => {
-    setExpandedKey((current) => (current === key ? null : key));
+  const getGitHubButton = (project) => {
+    return project.buttons?.find((button) => button.label === "GitHub");
+  };
+
+  const handleCardActivate = (project) => {
+    const githubButton = getGitHubButton(project);
+    if (!githubButton?.url) return;
+    window.open(githubButton.url, "_blank", "noopener,noreferrer");
   };
 
   const handleButtonClick = (e, button) => {
@@ -95,8 +98,7 @@ export default function Projects() {
         <ProjectCard
           key={project.id}
           project={project}
-          expandedKey={expandedKey}
-          onCardClick={handleCardClick}
+          onCardActivate={handleCardActivate}
           hoveredTitle={hoveredTitle}
           onHover={setHoveredTitle}
           onButtonClick={handleButtonClick}

@@ -9,6 +9,7 @@ const workEx = [
     buttonLabel: "Pictures",
     image: unionLogo,
     imageAlt: "Union Pacific Railroad logo",
+    pictures: [],
     duties: ["Angular", "Java", "Spring Boot", "Jira", "Figma", "OracleDB"],
     positions: [
       {
