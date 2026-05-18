@@ -1,5 +1,6 @@
 import { useState } from "react";
 import projects from "../data/projects";
+import { useArrowCard } from "../context/ArrowNavContext";
 
 function ProjectCard({
   project,
@@ -13,16 +14,27 @@ function ProjectCard({
   const isExpanded = expandedKey === cardKey;
   const isHovered = hoveredTitle === cardKey;
 
+  const arrowNav = useArrowCard(`project-${cardKey}`, {
+    onActivate: () => onCardClick(cardKey),
+  });
+  const showArrow = arrowNav.isFocused || isHovered;
+
   return (
     <div
-      className="inside-section relative cursor-pointer border-2 border-black bg-[var(--justWhite)] px-2 pt-2 pb-2 "
+      ref={arrowNav.ref}
+      tabIndex={arrowNav.tabIndex}
+      role="button"
+      aria-expanded={isExpanded}
+      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-black bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
       onClick={() => onCardClick(cardKey)}
+      onFocus={arrowNav.onFocus}
+      onKeyDown={arrowNav.onKeyDown}
       onMouseEnter={() => onHover(cardKey)}
       onMouseLeave={() => onHover(null)}
     >
       <div className="experience-row">
         <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
-          {isHovered && (
+          {showArrow && (
             <span className="experience-arrow-blink">{">"}</span>
           )}
           {project.title}

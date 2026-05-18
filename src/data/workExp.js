@@ -23,7 +23,7 @@ const workEx = [
     role: "Undergraduate Research Assistant",
     date: "January 2025 - May 2025",
     location: "Kennesaw GA",
-    linkKey: "kennesaw",
+    linkKey: "symposium",
     buttonLabel: "Research Poster",
     duties: ["Python", "Machine Learning", "Data Analysis", "Data Preprocessing"],
   },

@@ -90,6 +90,12 @@
             transition: none;
         }
     }
+    .arrow-nav-card:focus {
+        outline: none;
+    }
+    .arrow-nav-card:focus-visible {
+        @apply outline-2 outline-offset-2 outline-stone-900;
+    }
     .experience-arrow-blink {
         animation: experience-arrow-blink 0.9s step-end infinite;
     }

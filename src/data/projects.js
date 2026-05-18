@@ -1,13 +1,14 @@
 const projects = [
   {
     id: "ai-genie",
-    title: "AI Genie Chatbot",
+    title: "Artificial Intelligence Capstone Project (AI Genie Chatbot)",
     description:
       "Built an AI-powered chatbot for DineNGo that automated support, troubleshooting, CRM ticketing, and knowledge base updates.",
     stack: ["Angular", "Node.js", "PostgreSQL", "OpenAI API", "Web scraping"],
     buttons: [
-      { label: "GitHub", url: "https://github.com/Juwonaman" },
-      { label: "Other Projects", url: "" },
+      { label: "GitHub", url: "https://github.com/AIGenieChatBot/DineNGO" },
+      { label: "Video", url: "https://www.youtube.com/watch?v=4VIRtcmQrwo" },
+      { label: "Poster", url: "https://digitalcommons.kennesaw.edu/cgi/viewcontent.cgi?article=1561&context=cday" },
     ],
   },
   {
@@ -16,7 +17,7 @@ const projects = [
     description:
       "Built a Java-based lexical analyzer and parser to validate Decaf code syntax and generate parse trees.",
     stack: ["Java", "Compiler Design", "Recursive Descent Parsing", "Lexical Analysis"],
-    buttons: [{ label: "GitHub", url: "" }],
+    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/DecafJavaScanner" }],
   },
   {
     id: "aquarium-app",

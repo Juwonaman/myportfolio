@@ -11,6 +11,7 @@ import Typewriter from 'typewriter-effect';
 import ScrollFadeIn from './components/ScrollFadeIn';
 import { openGitHub, openInstagram, openLinkedIn, openResume } from './components/buttonTask';
 import PhotoShuffle from './components/photshuffle';
+import { ArrowNavProvider } from './context/ArrowNavContext';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
   
   return (
     <main>
+      <ArrowNavProvider>
       <ScrollFadeIn>
         
       <header className= "recipe-between-title">
@@ -128,6 +130,7 @@ function App() {
        </section>
 
       </ScrollFadeIn>
+      </ArrowNavProvider>
     </main>
   )
 }
