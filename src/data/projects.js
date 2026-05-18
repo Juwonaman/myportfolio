@@ -3,7 +3,7 @@ const projects = [
     id: "ai-genie",
     title: "Artificial Intelligence Capstone Project (AI Genie Chatbot)",
     description:
-      "Built an AI-powered chatbot for DineNGo that automated support, troubleshooting, CRM ticketing, and knowledge base updates.",
+      "AI-powered restaurant support platform for DineNGo that automates troubleshooting, CRM ticketing, knowledge base updates, and customer support with OpenAI.",
     stack: ["Angular", "Node.js", "PostgreSQL", "OpenAI API", "Web scraping"],
     buttons: [
       { label: "GitHub", url: "https://github.com/AIGenieChatBot/DineNGO" },
@@ -15,7 +15,7 @@ const projects = [
     id: "decaf-parser",
     title: "Lexical Analyzer & Parser for Decaf Language",
     description:
-      "Built a Java-based lexical analyzer and parser to validate Decaf code syntax and generate parse trees.",
+      "Compiler front-end for the Decaf language with lexical analysis, syntax validation, and recursive-descent parse tree generation in Java.",
     stack: ["Java", "Compiler Design", "Recursive Descent Parsing", "Lexical Analysis"],
     buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/DecafJavaScanner" }],
   },
@@ -23,7 +23,7 @@ const projects = [
     id: "aquarium-app",
     title: "Aquarium Fish Compatibility App",
     description:
-      "Built an aquarium fish compatibility app that recommends compatible tank mates and generates fish care summaries using species data and AI.",
+      "Aquarium compatibility tool that recommends tank mates and generates personalized fish care summaries from species data and OpenAI.",
     stack: ["React", "Node.js", "PostgreSQL", "OpenAI API", "Supabase"],
     buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/ai_fish.git" }],
   },
@@ -31,7 +31,7 @@ const projects = [
     id: "cardsync",
     title: "CardSync",
     description:
-      "Built an Angular-based financial dashboard that summarizes spending activity and provides AI-generated insights across multiple accounts.",
+      "Personal finance dashboard that aggregates multi-account spending and delivers AI-generated insights with Plaid and OpenAI integration.",
     stack: [
       "Angular",
       "TypeScript",
@@ -47,7 +47,7 @@ const projects = [
     id: "powergrid",
     title: "Power Grid Simulator",
     description:
-      "Built a full-stack power grid simulator using React and Spring Boot to manage infrastructure, maintenance, billing, and real-time disruption events.",
+      "Full-stack power grid simulator with infrastructure management, maintenance workflows, billing, and real-time disruption events using React and Spring Boot.",
     stack: ["React", "Java", "Spring Boot", "REST APIs"],
     buttons: [
       { label: "GitHub", url: "https://github.com/Juwonaman/power-grid-simulator" },
