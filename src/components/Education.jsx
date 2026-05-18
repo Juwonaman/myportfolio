@@ -29,27 +29,38 @@ function EducationCard({ edu, idx }) {
       onKeyDown={hasLink ? arrowNav.onKeyDown : undefined}
       onMouseEnter={() => setHoveredEducation(true)}
       onMouseLeave={() => setHoveredEducation(false)}
-      className={`inside-section relative border-2 border-black bg-[var(--justWhite)] px-2 pt-2 pb-2 recipe-between-education ${
+      className={`inside-section relative border-2 border-stone-400 bg-[var(--justWhite)] px-2 pt-2 pb-2 ${
         hasLink ? `cursor-pointer arrow-nav-card ${arrowNav.className}` : ""
       }`}
     >
-      <div className="education-row">
-        <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
-          {showArrow && <span className="experience-arrow-blink">{">"}</span>}
-          {edu.school}
-        </h2>
-        <p className="education-date shrink-0">{edu.date}</p>
+      <div className="experience-card-inner">
+        {edu.image && (
+          <img
+            src={edu.image}
+            alt={edu.imageAlt ?? edu.school}
+            className="experience-logo"
+          />
+        )}
+        <div className="experience-card-content">
+          <div className="education-row">
+            <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
+              {showArrow && <span className="experience-arrow-blink">{">"}</span>}
+              {edu.school}
+            </h2>
+            <p className="education-date shrink-0">{edu.date}</p>
+          </div>
+          <h3>{edu.degree}</h3>
+          <p>GPA: {edu.gpa}</p>
+          {edu.certs ? <p>{edu.certs}</p> : null}
+        </div>
       </div>
-      <h3>{edu.degree}</h3>
-      <p>GPA: {edu.gpa}</p>
-      {edu.certs ? <p>{edu.certs}</p> : null}
     </div>
   );
 }
 
 function Education() {
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {education.map((edu, idx) => (
         <EducationCard key={edu.school ?? idx} edu={edu} idx={idx} />
       ))}

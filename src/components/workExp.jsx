@@ -61,13 +61,22 @@ function WorkExpCard({
       tabIndex={arrowNav.tabIndex}
       role="button"
       aria-expanded={expandedIndex === idx}
-      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-black bg-[var(--justWhite)] px-2 pt-2 recipe-between-education ${arrowNav.className}`}
+      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-stone-400 bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
       onClick={() => onCardClick(idx)}
       onFocus={arrowNav.onFocus}
       onKeyDown={arrowNav.onKeyDown}
       onMouseEnter={() => setHoveredCompany(hoverKey)}
       onMouseLeave={() => setHoveredCompany(null)}
     >
+      <div className="experience-card-inner">
+        {comp.image && (
+          <img
+            src={comp.image}
+            alt={comp.imageAlt ?? comp.company}
+            className="experience-logo"
+          />
+        )}
+        <div className="experience-card-content">
       <div
         className={`experience-row ${comp.linkKey === "union" ? "experience-title-divided" : ""}`}
       >
@@ -77,24 +86,24 @@ function WorkExpCard({
         </h2>
       </div>
 
-      {comp.positions?.length ? (
+          {comp.positions?.length ? (
         <div className="experience-positions">
           {comp.positions.map((pos, posIdx) => (
             <div key={posIdx} className="experience-position">
               <div className="experience-row">
-                <p className="min-w-0 flex-1 font-medium">{pos.role}</p>
+                <p className="min-w-0 flex-1 font-bold">{pos.role}</p>
                 <p className="experience-date shrink-0">{pos.date}</p>
               </div>
-              <p>{pos.location}</p>
+              <p className="text-stone-500">{pos.location}</p>
             </div>
           ))}
         </div>
       ) : (
         <div className="experience-card-body">
           <div className="experience-card-meta">
-            <p>{comp.role}</p>
+            <p className="font-bold">{comp.role}</p>
           </div>
-          <p>{comp.location}</p>
+          <p className="text-stone-500">{comp.location}</p>
         </div>
       )}
 
@@ -121,6 +130,8 @@ function WorkExpCard({
           </button>
         )}
       </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -141,7 +152,7 @@ export function WorkExp() {
   };
 
   return (
-    <section>
+    <section className="flex flex-col gap-4">
       {workEx.map((comp, idx) => {
         const hoverKey = comp.positions?.length ? comp.company : comp.role;
 

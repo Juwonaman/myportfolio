@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import contactInfo from '../data/contactMe';
+import socialButtons from '../data/socialButtons';
 import { useArrowCard } from '../context/ArrowNavContext';
+import SocialButton from './SocialButton';
 
-const SOCIAL_LINKS = [
-  { id: 'linkedin', label: 'LinkedIn', getHref: (c) => c.linkedin },
-  { id: 'github', label: 'GitHub', getHref: (c) => c.github },
-  { id: 'instagram', label: 'Instagram', getHref: (c) => c.instagram },
-];
+const CONTACT_HREF_KEYS = {
+  linkedin: 'linkedin',
+  github: 'github',
+  instagram: 'instagram',
+};
 
 function openEmail(email) {
   window.location.href = `mailto:${email}`;
@@ -64,19 +66,23 @@ function Contact() {
             >
               Email
             </a>
-            {SOCIAL_LINKS.map(({ id, label, getHref }) => {
-              const href = getHref(contact);
+            {socialButtons.map(({ id, label, icon, iconAlt, variant }) => {
+              const href = contact[CONTACT_HREF_KEYS[id]];
               if (!href) return null;
               return (
-                <a
+                <SocialButton
                   key={id}
+                  icon={icon}
+                  iconAlt={iconAlt}
+                  label={label}
+                  variant={variant}
                   href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link-btn"
-                >
-                  {label}
-                </a>
+                  className={
+                    variant === 'primary'
+                      ? 'contact-link-btn contact-link-btn-primary'
+                      : 'contact-link-btn'
+                  }
+                />
               );
             })}
             {contact.resume && (

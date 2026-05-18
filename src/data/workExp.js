@@ -1,9 +1,14 @@
+import unionLogo from './1280px-Union_pacific_railroad_logo.svg.png';
+import ksuLogo from './Kennesaw_State_Owls_logo.svg.png';
+
 const workEx = [
   {
     company: "Union Pacific Railroad",
     date: "May 2025 - May 2026",
     linkKey: "union",
     buttonLabel: "Pictures",
+    image: unionLogo,
+    imageAlt: "Union Pacific Railroad logo",
     duties: ["Angular", "Java", "Spring Boot", "Jira", "Figma", "OracleDB"],
     positions: [
       {
@@ -25,6 +30,8 @@ const workEx = [
     location: "Kennesaw GA",
     linkKey: "symposium",
     buttonLabel: "Research Poster",
+    image: ksuLogo,
+    imageAlt: "Kennesaw State University logo",
     duties: ["Python", "Machine Learning", "Data Analysis", "Data Preprocessing"],
   },
 ];

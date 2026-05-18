@@ -10,9 +10,17 @@ import Projects from './components/Projects';
 import Typewriter from 'typewriter-effect';
 import ScrollFadeIn from './components/ScrollFadeIn';
 import { openGitHub, openInstagram, openLinkedIn, openResume } from './components/buttonTask';
+import SocialButton from './components/SocialButton';
+import socialButtons from './data/socialButtons';
 import PhotoShuffle from './components/photshuffle';
 import Contact from './components/Contact';
 import { ArrowNavProvider } from './context/ArrowNavContext';
+
+const NAV_SOCIAL_ACTIONS = {
+  linkedin: openLinkedIn,
+  github: openGitHub,
+  instagram: openInstagram,
+};
 
 
 function App() {
@@ -23,7 +31,7 @@ function App() {
       <ArrowNavProvider>
       <ScrollFadeIn>
         
-      <header className= "recipe-between-title">
+      <header className="recipe-between-title inside-section">
         
     <div className="hero-name-row">
       
@@ -38,26 +46,17 @@ function App() {
   }}/>      </h1>
   
       <div className="to-right">
-        <button
-          type="button"
-          onClick={openLinkedIn}
-          className="cursor-pointer my-button w-fit border-2 border-black px-7 py-0.5 font-medium text-white shadow-[3px_3px_0px_grey] transition-all"
-        >
-          LinkedIn
-        </button>
-        <button
-          type="button"
-          onClick={openGitHub}
-          className="cursor-pointer my-buttonpt w-fit border-2 border-black px-7 py-0.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
-        >
-          GitHub
-        </button>
-        <button 
-        type="button"
-        onClick={openInstagram}
-        className=" cursor-pointer px-7 py-0.5 border-2 border-black font-medium text-black w-fit transition-all shadow-[3px_3px_0px_grey] my-buttonpt ">
-          Instagram
-        </button>
+        {socialButtons.map(({ id, label, icon, iconAlt, variant }) => (
+          <SocialButton
+            key={id}
+            icon={icon}
+            iconAlt={iconAlt}
+            label={label}
+            variant={variant}
+            appearance="header"
+            onClick={NAV_SOCIAL_ACTIONS[id]}
+          />
+        ))}
         <button
           type="button"
           className=" cursor-pointer my-buttonpt w-fit border-2 border-black px-3 py-1.5 font-medium text-black shadow-[3px_3px_0px_grey] transition-all"
@@ -101,14 +100,20 @@ function App() {
           </div>
           <PhotoShuffle />
         </div>
+        <blockquote className="whoami-quote">
+          <p className="whoami-quote-text">
+            “A ship in harbor is safe, but that is not what ships are built for.”
+          </p>
+          <footer className="whoami-quote-author">— John A. Shedd</footer>
+        </blockquote>
       </section>
 
-      <section className="relative border-2 border-black px-4 pt-8 recipe-between ">
+      <section className="relative border-2 border-black px-4 pt-8 recipe-between inside-section">
       <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/workExperience.md</span>
 
       <WorkExp />
        </section>
-      <section className="relative border-2 border-black  bg-[#f7f4ed] px-4 pt-8 recipe-between ">
+      <section className="relative border-2 border-black bg-[#f7f4ed] px-4 pt-8 recipe-between inside-section">
       <span className="absolute left-29 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap bg-[#f7f4ed] px-4 font-mono italic">cat ~/education.md</span>
 
      

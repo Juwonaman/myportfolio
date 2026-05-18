@@ -25,7 +25,7 @@ function ProjectCard({
       tabIndex={arrowNav.tabIndex}
       role="button"
       aria-expanded={isExpanded}
-      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-black bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
+      className={`inside-section arrow-nav-card relative cursor-pointer border-2 border-stone-400 bg-[var(--justWhite)] px-2 pt-2 pb-2 ${arrowNav.className}`}
       onClick={() => onCardClick(cardKey)}
       onFocus={arrowNav.onFocus}
       onKeyDown={arrowNav.onKeyDown}
