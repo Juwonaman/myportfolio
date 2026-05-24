@@ -5,7 +5,6 @@ const contactInfo = [
     instagram: 'https://www.instagram.com/callme.juwon/',
     github: 'https://github.com/Juwonaman',
     resume: '/Myresume.pdf',
-    location: 'Metro-Atlanta Area, GA',
   },
 ];
 

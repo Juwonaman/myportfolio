@@ -53,7 +53,7 @@ function Contact() {
       {contactInfo.map((contact, idx) => (
         <div key={idx} className="contact-block">
           <div className="contact-location-row">
-            <p className="contact-location-label">location</p>
+            <p className="contact-location-label">my contact info</p>
             <p className="contact-location-value">{contact.location}</p>
           </div>
 
