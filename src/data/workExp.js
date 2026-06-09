@@ -65,7 +65,7 @@ const workEx = [
     company: "Kennesaw State University",
     role: "Undergraduate Research Assistant",
     date: "January 2025 - May 2025",
-    location: "Kennesaw GA",
+    location: "Kennesaw, GA",
     linkKey: "symposium",
     logoLinkKey: "kennesaw",
     buttonLabel: "Research Poster",

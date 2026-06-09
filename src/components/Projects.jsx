@@ -31,46 +31,53 @@ function ProjectCard({
       onMouseEnter={() => onHover(cardKey)}
       onMouseLeave={() => onHover(null)}
     >
-      <div className="experience-row">
-        
-          
-        <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
-          {showArrow && (
-            <span className="experience-arrow-blink">{">"}</span>
-          )}<ExperienceLogo image = {project.image}
-          imageAlt = {project.imageAlt} />
-          {project.title}
-        </h2>
-      </div>
-      <p className="project-description">{project.description}</p>
+      <div className="experience-card-inner">
+        <ExperienceLogo
+          image={project.image}
+          imageAlt={project.imageAlt}
+          label={project.title}
+          className="project-logo"
+        />
+        <div className="experience-card-content">
+          <div className="experience-row">
+            <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
+              {showArrow && (
+                <span className="experience-arrow-blink">{">"}</span>
+              )}
+              {project.title}
+            </h2>
+          </div>
+          <p className="project-description">{project.description}</p>
 
-      <div className="card-actions-row experience-row items-start gap-2">
-        <div
-          className="experience-duties-panel project-stack-panel min-w-0 flex-1 is-open"
-          aria-hidden="false"
-        >
-          <ul className="experience-duties-chips experience-duties-chips-start">
-            {project.stack.map((tech, techIdx) => (
-              <li key={techIdx}>
-                <span className="experience-skill-chip">{tech}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div
-          className="card-actions-buttons ml-auto flex shrink-0 flex-wrap gap-2"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {project.buttons?.map((button, btnIdx) => (
-            <button
-              key={btnIdx}
-              type="button"
-              onClick={(e) => onButtonClick(e, button)}
-              className="my-buttonpt w-fit max-w-full shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
+          <div className="card-actions-row experience-row items-start gap-2">
+            <div
+              className="experience-duties-panel project-stack-panel min-w-0 flex-1 is-open"
+              aria-hidden="false"
             >
-              {button.label}
-            </button>
-          ))}
+              <ul className="experience-duties-chips experience-duties-chips-start">
+                {project.stack.map((tech, techIdx) => (
+                  <li key={techIdx}>
+                    <span className="experience-skill-chip">{tech}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div
+              className="card-actions-buttons ml-auto flex shrink-0 flex-wrap gap-2"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {project.buttons?.map((button, btnIdx) => (
+                <button
+                  key={btnIdx}
+                  type="button"
+                  onClick={(e) => onButtonClick(e, button)}
+                  className="my-buttonpt w-fit max-w-full shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
+                >
+                  {button.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>

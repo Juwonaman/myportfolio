@@ -258,10 +258,16 @@
         outline-offset: 2px;
     }
     .experience-logo {
-        @apply h-16 w-16 shrink-0 border-2 border-[var(--border-inner)] bg-[var(--justWhite)] object-contain p-1;
+        @apply block h-16 w-16 shrink-0 border-2 border-[var(--border-inner)] bg-[var(--justWhite)] object-contain p-1;
+    }
+    .project-logo {
+        @apply object-cover p-0;
     }
     .experience-card-content {
         @apply min-w-0 flex-1;
+    }
+    .dep {
+        @apply mb-3 block;
     }
     .experience-picture-backdrop {
         @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4;

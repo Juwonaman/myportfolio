@@ -1,6 +1,6 @@
 import schoolLinks from "../data/links";
 
-export function ExperienceLogo({ image, imageAlt, label, linkKey }) {
+export function ExperienceLogo({ image, imageAlt, label, linkKey, className = "" }) {
   if (!image) return null;
 
   const url = linkKey ? schoolLinks[linkKey] : null;
@@ -8,13 +8,15 @@ export function ExperienceLogo({ image, imageAlt, label, linkKey }) {
     <img
       src={image}
       alt={imageAlt ?? label}
-      className="experience-logo"
+      className={`experience-logo ${className}`.trim()}
       loading="lazy"
       decoding="async"
     />
   );
 
-  if (!url) return img;
+  if (!url) {
+    return <span className="experience-logo-link">{img}</span>;
+  }
 
   return (
     <a

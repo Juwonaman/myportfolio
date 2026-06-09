@@ -77,9 +77,7 @@ function WorkExpCard({
           linkKey={comp.logoLinkKey}
         />
         <div className="experience-card-content">
-      <div
-        className={`experience-row ${comp.linkKey === "union" ? "experience-title-divided" : ""}`}
-      >
+      <div className="experience-row experience-title-divided">
         <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
           {showArrow && <span className="experience-arrow-blink">{">"}</span>}
           {comp.company}
@@ -100,8 +98,9 @@ function WorkExpCard({
         </div>
       ) : (
         <div className="experience-card-body">
-          <div className="experience-card-meta">
-            <p className="font-bold">{comp.role}</p>
+          <div className="experience-row">
+            <p className="min-w-0 flex-1 font-bold">{comp.role}</p>
+            {comp.date && <p className="experience-date">{comp.date}</p>}
           </div>
           <p className="text-stone-500">{comp.location}</p>
         </div>

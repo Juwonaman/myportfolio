@@ -24,7 +24,7 @@ const projects = [
     id: "cardsync",
     title: "CardSync",
     description:
-      "Personal finance dashboard that syncs multi-account transactions through Plaid and surfaces AI-generated spending insights.",
+      "Personal financial dashboard that connects multiple credit card transactions across multiple bank accounts via the Plaid API, with real-time spending breakdowns by category and daily trends.",
     stack: [
       "Angular",
       "TypeScript",
@@ -50,16 +50,17 @@ const projects = [
     ],
     image:powergridLogo,
     imageAlt: "Power Grid Logo"
-  }, {
-    id: "aquarium-app",
-    title: "(Currently working on) Aquarium Fish Compatibility App",
-    description:
-      "Aquarium compatibility assistant that matches tank mates and generates species-specific care summaries from structured data and OpenAI.",
-    stack: ["React", "Node.js", "PostgreSQL", "OpenAI API", "Supabase"],
-    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/ai_fish.git" }],
-    image:aqLogo,
-    imageAlt: "Aquarium Compatibility Logo"
-  },
+  }, 
+  // {
+  //   id: "aquarium-app",
+  //   title: "(Currently working on) Aquarium Fish Compatibility App",
+  //   description:
+  //     "Aquarium compatibility assistant that matches tank mates and generates species-specific care summaries from structured data and OpenAI.",
+  //   stack: ["Angular", "Python", "PostgreSQL", "AWS", "Supabase"],
+  //   buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/ai_fish.git" }],
+  //   image:aqLogo,
+  //   imageAlt: "Aquarium Compatibility Logo"
+  // },
 ];
 
 export default projects;

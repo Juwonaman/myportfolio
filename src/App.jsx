@@ -99,6 +99,7 @@ function App() {
 
       <section className="recipe-section">
         <span className="recipe-section-label">cat ~/workExperience.md</span>
+        <span className="dep">the professional part of this</span>
         <WorkExp />
       </section>
 
@@ -114,6 +115,7 @@ function App() {
 
       <section className="recipe-section">
         <span className="recipe-section-label">ls ~/projects.md</span>
+        <span className="dep">a few things I have worked on</span>
         <Projects />
       </section>
 
