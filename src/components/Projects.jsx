@@ -1,6 +1,7 @@
 import { useState } from "react";
 import projects from "../data/projects";
 import { useArrowCard } from "../context/ArrowNavContext";
+import { ExperienceLogo } from "./ExperienceLogo";
 
 function ProjectCard({
   project,
@@ -31,10 +32,13 @@ function ProjectCard({
       onMouseLeave={() => onHover(null)}
     >
       <div className="experience-row">
+        
+          
         <h2 className="reciple-section-xsmall flex min-w-0 flex-1 items-center gap-2">
           {showArrow && (
             <span className="experience-arrow-blink">{">"}</span>
-          )}
+          )}<ExperienceLogo image = {project.image}
+          imageAlt = {project.imageAlt} />
           {project.title}
         </h2>
       </div>

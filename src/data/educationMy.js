@@ -13,17 +13,17 @@ const schoolinfo = [
     image: ksuLogo,
     imageAlt: "Kennesaw State University logo",
   },
-  // {
-  //   school: "Georgia Institute of Technology",
-  //   location: "Atlanta Georgia",
-  //   linkKey: "georgiain",
-  //   gpa: "3.0/4.0",
-  //   degree: "Master of Science in Computer Science",
-  //   certs: "",
-  //   date: "January 2026 - May 2028",
-  //   image: georgiaTechLogo,
-  //   imageAlt: "Georgia Institute of Technology logo",
-  // },
+  {
+    school: "Georgia Institute of Technology",
+    location: "Atlanta Georgia",
+    linkKey: "georgiain",
+    gpa: "4.0/4.0",
+    degree: "Master of Science in Computer Science",
+    certs: "",
+    date: "January 2026 - May 2028",
+    image: georgiaTechLogo,
+    imageAlt: "Georgia Institute of Technology logo",
+  },
 ];
 
 export default schoolinfo;

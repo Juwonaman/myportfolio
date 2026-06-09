@@ -1,3 +1,8 @@
+import aigenieLogo from './aigene.png'
+import aqLogo from './construction.jpg'
+import cardsyncLogo from './cardsync1.png';
+import powergridLogo from './powergrid.png'
+
 const projects = [
   {
     id: "ai-genie",
@@ -10,39 +15,29 @@ const projects = [
       { label: "Video", url: "https://www.youtube.com/watch?v=4VIRtcmQrwo" },
       { label: "Poster", url: "https://digitalcommons.kennesaw.edu/cgi/viewcontent.cgi?article=1561&context=cday" },
     ],
+    image:aigenieLogo,
+    imageAlt: "AI Genie Logo"
   },
+ 
+  
   {
-    id: "decaf-parser",
-    title: "Lexical Analyzer & Parser for Decaf Language",
+    id: "cardsync",
+    title: "CardSync",
     description:
-      "Recursive-descent Decaf compiler front-end that tokenizes source code, validates syntax, and generates parse trees in Java.",
-    stack: ["Java", "Compiler Design", "Recursive Descent Parsing", "Lexical Analysis"],
-    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/DecafJavaScanner" }],
+      "Personal finance dashboard that syncs multi-account transactions through Plaid and surfaces AI-generated spending insights.",
+    stack: [
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Plaid Sandbox",
+      "OpenAI API",
+    ],
+    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/cardsync.git" }],
+    image:cardsyncLogo,
+    imageAlt: "Card Sync Logo"
   },
-  // {
-  //   id: "aquarium-app",
-  //   title: "Aquarium Fish Compatibility App",
-  //   description:
-  //     "Aquarium compatibility assistant that matches tank mates and generates species-specific care summaries from structured data and OpenAI.",
-  //   stack: ["React", "Node.js", "PostgreSQL", "OpenAI API", "Supabase"],
-  //   buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/ai_fish.git" }],
-  // },
-  // {
-  //   id: "cardsync",
-  //   title: "CardSync",
-  //   description:
-  //     "Personal finance dashboard that syncs multi-account transactions through Plaid and surfaces AI-generated spending insights.",
-  //   stack: [
-  //     "Angular",
-  //     "TypeScript",
-  //     "Node.js",
-  //     "Express",
-  //     "PostgreSQL",
-  //     "Plaid Sandbox",
-  //     "OpenAI API",
-  //   ],
-  //   buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/cardsync.git" }],
-  // },
   {
     id: "powergrid",
     title: "Power Grid Simulator",
@@ -53,6 +48,17 @@ const projects = [
       { label: "GitHub", url: "https://github.com/Juwonaman/power-grid-simulator" },
       { label: "Video", url: "https://youtu.be/qiBJHDS6IBQ" },
     ],
+    image:powergridLogo,
+    imageAlt: "Power Grid Logo"
+  }, {
+    id: "aquarium-app",
+    title: "(Currently working on) Aquarium Fish Compatibility App",
+    description:
+      "Aquarium compatibility assistant that matches tank mates and generates species-specific care summaries from structured data and OpenAI.",
+    stack: ["React", "Node.js", "PostgreSQL", "OpenAI API", "Supabase"],
+    buttons: [{ label: "GitHub", url: "https://github.com/Juwonaman/ai_fish.git" }],
+    image:aqLogo,
+    imageAlt: "Aquarium Compatibility Logo"
   },
 ];
 
