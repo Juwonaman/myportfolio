@@ -17,7 +17,7 @@ const schoolinfo = [
     school: "Georgia Institute of Technology",
     location: "Atlanta Georgia",
     linkKey: "georgiain",
-    gpa: "4.0/4.0",
+    gpa: "3.5/4.0",
     degree: "Master of Science in Computer Science",
     certs: "",
     date: "January 2026 - May 2028",
