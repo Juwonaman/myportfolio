@@ -107,28 +107,33 @@ function WorkExpCard({
       )}
 
       <div className="card-actions-row experience-row items-start gap-2">
-        <div
-          className={`experience-duties-panel ${expandedIndex === idx ? "is-open" : ""}`}
-          aria-hidden={expandedIndex !== idx}
-        >
-          <ul className="experience-duties-chips experience-duties-chips-start">
-            {comp.duties.map((duty, dutyIdx) => (
-              <li key={dutyIdx}>
-                <span className="experience-skill-chip">{duty}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {comp.linkKey && schoolLinks[comp.linkKey] && (
-          <button
-            type="button"
-            onClick={(e) => onCompanyClick(e, comp)}
-            className="my-buttonpt ml-auto w-fit max-w-full shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
-          >
-            {comp.buttonLabel ?? "Company"}
-          </button>
-        )}
-      </div>
+  {comp.duties?.filter(Boolean).length > 0 && (
+    <div
+      className={`experience-duties-panel ${
+        expandedIndex === idx ? "is-open" : ""
+      }`}
+      aria-hidden={expandedIndex !== idx}
+    >
+      <ul className="experience-duties-chips experience-duties-chips-start">
+        {comp.duties.filter(Boolean).map((duty, dutyIdx) => (
+          <li key={dutyIdx}>
+            <span className="experience-skill-chip">{duty}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {comp.linkKey && schoolLinks[comp.linkKey] && (
+    <button
+      type="button"
+      onClick={(e) => onCompanyClick(e, comp)}
+      className="my-buttonpt ml-auto w-fit max-w-full shrink-0 cursor-pointer border-2 border-[var(--border-strong)] px-4 py-0.5 font-medium shadow-[3px_3px_0px_grey] transition-all sm:px-7"
+    >
+      {comp.buttonLabel ?? "Company"}
+    </button>
+  )}
+</div>
         </div>
       </div>
     </div>
