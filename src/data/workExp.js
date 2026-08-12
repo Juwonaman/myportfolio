@@ -71,7 +71,7 @@ const workEx = [
     buttonLabel: "Research Poster",
     image: ksuLogo,
     imageAlt: "Kennesaw State University logo",
-    duties: [""],
+    
   },
 ];
 
